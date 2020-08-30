@@ -67,3 +67,5 @@ group :production do
   gem 'unicorn'
 end
 # ここまで
+
+gem "haml-rails", ">= 1.0", '<= 2.0.1'
