@@ -5,18 +5,18 @@ default: &default
   username: root
   password:
   socket: /tmp/mysql.sock
-
+  
 development:
   <<: *default
-  database: fleamarket_sample_78a_development  #アプリケーション名はご自身のものに変更してください
+  database: fleamarket_sample_78a_development
 
 test:
   <<: *default
-  database: fleamarket_sample_78a_test  #アプリケーション名はご自身のものに変更してください
+  database: fleamarket_sample_78a_test
 
 production:
   <<: *default
-  database: fleamarket_sample_78a_production  #アプリケーション名はご自身のものに変更してください
-  username: root            #rootに変更
+  database: fleamarket_sample_78a_production
+  username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
