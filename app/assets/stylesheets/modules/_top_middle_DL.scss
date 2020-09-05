@@ -1,0 +1,35 @@
+.top_middle__block {
+  background-image: image-url("pict/bg-topMiddleDl-pict.jpg");
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  &__in-box {
+    max-width: 1040px;
+    width: 100%;
+    margin: 0 auto;
+    &__title {
+      font-size: 27px;
+      font-weight: bold;
+      margin-top: 100px;
+    }
+    &__text{
+      font-size: 18px;
+      margin: 20px 0;
+    }
+    &__icon{
+      .appBtn{
+        margin-bottom: 181px;
+        height: 47px;
+      }
+      .googleBtn{
+        margin-bottom: 170px;
+        height: 70px;
+        width: 180px;
+      }
+    }
+  }
+}

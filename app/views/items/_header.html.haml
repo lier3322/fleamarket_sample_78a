@@ -1,0 +1,27 @@
+.header__box
+  .header__box__main
+    .main__icon
+      = link_to root_path do
+        = image_tag 'logo/logo.png', alt: 'title', height: '41', width: '140'
+    .main__search
+      = form_with(url: "#", local: true, method: :get, class: "search-form") do |form|
+        = form.text_field :keyword, placeholder: "キーワードから探す", class: "search-input"
+        = button_tag type: "submit", class: "search-btn" do
+          %i.fas.fa-search.fa-lg
+  .header__box__action
+
+    %ul.action__list
+      %li.list__category
+        = link_to "#" do
+          カテゴリー
+
+      %li.list__brand
+        = link_to "#" do
+          ブランド
+    %ul.action__user
+      %li.user__login
+        = link_to root_path, class: "login_btn" do
+          ログイン
+      %li.user__new
+        = link_to root_path, class: "new_btn" do
+          新規会員登録
