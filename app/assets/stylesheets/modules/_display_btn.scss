@@ -1,0 +1,26 @@
+.display_btn {
+  box-sizing: border-box;
+  background-color: #3CCACE;
+  width: 120px;
+  color: white;
+  border-radius: 4%;
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  text-align: center;
+  text-decoration: none;
+  z-index: 1;
+  &__in-box{
+    padding: 15px 15px 10px 15px;
+    &--text {
+      color: #fff;
+      display: block;
+      font-size: 18px;
+      text-decoration: none;
+      margin-bottom: 5px;
+    }
+    &--img {
+      width: 60%;
+    }
+  }
+}
