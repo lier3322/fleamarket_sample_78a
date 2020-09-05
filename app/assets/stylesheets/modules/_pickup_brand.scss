@@ -1,0 +1,83 @@
+.pickup_brand__containerBrand{
+  background-color: #f8f8f8;
+  padding-bottom: 80px;
+  height: 100%;
+  &__title{
+    text-align: center;
+    font-size: 28px;
+    line-height: 1.4;
+    font-weight: bold;
+  }
+  &__product{
+    width: 780px;
+    margin: 0 auto;
+    &__head{
+      text-align: center;
+      .pickup_brand__products--head{
+        text-align: center;
+        color: #3CCACE;
+        font-size: 24px;
+        text-decoration: none;
+        h3.pickup_brand__head {
+          font-weight: bold;
+          align-items: center;
+        }
+      }
+    }
+    &--lists{
+      width: 780px;
+      margin: 26px auto;
+      display: flex;
+      justify-content: space-around;
+      &__list{
+        width: 150px;
+        display: inline-block;
+        margin: 0 auto;
+        height: 100%;
+        .pickup_brand__product__images{
+          width: 150px;
+          height: 150px;
+          position: relative;
+          overflow: hidden;
+          margin: 0;
+          z-index: auto;
+          &--image{
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: auto;
+            height: 150px;
+            object-fit: cover;
+          }
+        }
+          &__body{
+            background-color: white;
+            color: black;
+            padding: 16px;
+            h3.pickup_brand__product--name{
+              overflow: hidden;
+              line-height: 1.5;
+              font-size: 16px;
+              text-align: left;
+            }
+            &__details {
+              .pickup_brand__details__menu{
+                font-size: 16px;
+                text-align: left;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+              }
+            }
+            .pickup_brand__taxIncluded{
+              font-size: 10px;
+              text-align: left;
+            }
+          }
+      }
+    } 
+  }
+}
