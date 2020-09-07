@@ -28,28 +28,28 @@ Things you may want to cover:
   |Column|Type|Options|
   |------|----|-------|
   |nickname|string|null: false|
-  |birthday|integer|null: false|
+  |birthday|date|null: false|
   |password|integer|null: false|
   |first_name|string|null: false|
   |second_name|string|null: false|
   |first_name_kana|string|null: false|
-  |second_name_kana|string|null: false|
+  |last_name_kana|string|null: false|
   |email_adress|string|null: false|
 
   Assosiation
-  belongs_to :adress
+  has_one :address
   has_many :credit_cards
   has_many :products
 
 
-  adress
+  address
   |Column|Type|Options|
   |------|----|-------|
-  |postnumber|integer|null: false|
-  |adress_large_area|string|null: false|
-  |adress_small_area|string|null: false|
+  |postnumber|string|null: false|
+  |prefecture|string|null: false|
+  |city|string|null: false|
   |building|string||
-  |phone_number|integer||
+  |phone_number|string||
   |user_id|integer|null: false, foreign_key: true|
   Associations
   belongs_to :users
@@ -62,7 +62,7 @@ Things you may want to cover:
   |user_id|integer|null: false, foreign_key: true|
 
   Associations
-  belongs_to :users
+  belongs_to :user
 
 
   products
@@ -71,16 +71,19 @@ Things you may want to cover:
   |product_name|text|null: false|
   |price|integer|null: false|
   |brand|string||
-  |size|string|null: false|
-  |product_status|string|null: false|
-  |delivery_fee|string|null: false|
-  |delivery_time|integer|null: false|
+  |size|size_id|null: false|
+  |product_status|status_id|null: false|
+  |delivery_fee|fee_id|null: false|
+  |delivery_time|time_id|null: false|
   |delivery_area|string||
   |user_id|integer|null: false, foreign_key: true|
 
   Assosiation
-  belongs_to :users
-  has_many :comments
+  belongs_to :user
+  belongs_to_active_hash :size
+  belongs_to_active_hash :product_status
+  belongs_to_active_hash :delivery_fee
+  belongs_to_active_hash :delivery_time
 
 
   images
@@ -90,5 +93,7 @@ Things you may want to cover:
   |product_id|integer|null: false, foreign_key: true|
 
   Assosiation
-  belongs_to :products
+  belongs_to :product
+
+
 
