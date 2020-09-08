@@ -1,0 +1,80 @@
+.registration-input-area
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), local: true ) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .registration-input-items-name
+      .registration-input-items-name__name
+        = f.label :nickname ,'ニックネーム'
+      .registration-input-items-name__icon--req
+        必須
+    .registration-input-items-field
+      = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "例）フリマ太郎", class: 'input-box'
+  
+    .registration-input-items-name
+      .registration-input-items-name__name
+        = f.label :email
+      .registration-input-items-name__icon--req
+        必須
+    .registration-input-items-field
+      = f.email_field :email, placeholder: "PC・携帯どちらでも可",class: 'input-box'
+   
+    .registration-input-items-name
+      .registration-input-items-name__name
+        = f.label :password, 'パスワード'
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length} 文字以上)
+        %br/
+      .registration-input-items-name__icon--req
+        必須
+    .registration-input-items-field
+      = f.password_field :password, autocomplete: "new-password", placeholder:'パスワードを入力', class: 'input-box'
+    
+    .registration-input-items-name
+      .registration-input-items-name__name
+        = f.label :password_confirmation, 'パスワード確認'
+      .registration-input-items-name__icon--req
+        必須
+    .registration-input-items-field
+      = f.password_field :password_confirmation, autocomplete: "new-password", placeholder:'パスワードを入力', class: 'input-box'
+
+    .identification-message-area
+      %h2.identification-message-area__title 本人確認
+      .identification-message-area__text
+        %p 安心・安全にご利用いただくために、
+        %p お客さまの本人情報の登録にご協力ください。
+        %p 他のお客さまに公開されることはありません。
+
+    .registration-input-items-name
+      .registration-input-items-name__name
+        = f.label :last_name ,'お名前（全角）'
+      .registration-input-items-name__icon--req
+        必須
+    .registration-input-items-field
+      = f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "例）振間", class: 'input-user-name-box'
+      = f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "例）太郎", class: 'input-user-name-box'
+
+    .registration-input-items-name
+      .registration-input-items-name__name
+        = f.label :last_name_kana ,'お名前カナ（全角）'
+      .registration-input-items-name__icon--req
+        必須
+    .registration-input-items-field
+      = f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", placeholder: "例）フリマ", class: 'input-user-name-box'
+      = f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", placeholder: "例）タロウ", class: 'input-user-name-box'
+
+    .registration-input-items-name
+      .registration-input-items-name__name
+        = f.label :birthday, '生年月日'
+      .registration-input-items-name__icon--req
+        必須
+    .registration-input-items-field
+      != sprintf(f.date_select(:birthday, prefix:'user',with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+    
+    -# .next-page-link
+    -#   = link_to '次へ' , new_address_path, class: 'next-page-link__btn'
+
+    .submit-btn
+      = f.submit "登録する", class: 'submit-btn__registration'
+
+    -# .actions
+    -#   = f.submit "登録する", class: 'Login-btn'

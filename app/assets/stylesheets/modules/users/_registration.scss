@@ -1,0 +1,79 @@
+.registration-title {
+  @include centered;
+  justify-content: center;
+  background-color: white;
+  width: 600px;
+  height: 100px;
+  margin-bottom: 2px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.registration-input-area {
+  @include user-info-input(600px);
+}
+  .registration-input-items-name {
+    display: flex;
+    margin-bottom: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    width:300px;
+    font-size: 14px;
+      &__name {
+        height: 20px;
+        line-height: 20px;
+        margin-right: 5px;
+      }
+      &__icon {
+        &--req {
+          @include icon(#3CCACE);
+        }
+        &--any {
+          @include icon(#888888);
+        }
+      }
+  }
+
+  .registration-input-items-field {
+    margin-bottom: 20px;
+  }
+
+  .identification-message-area {
+    margin: 20px 0px;
+      &__title {
+        font-weight: bold;
+      }
+      &__text {
+        font-size: 12px;
+      }
+  }
+
+    .input-user-name-box {
+      @include box-sizing(145px);
+    }
+
+    .year {
+      @include box-sizing(120px);
+    }
+
+    .month, .day {
+      @include box-sizing(55px);
+    }
+
+  .next-page-link {
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border: none;
+    background-color: #ffb340;
+    margin: 10px auto;
+
+      &__btn {
+        color: white;
+        text-decoration: none;
+      }
+  }
+
+
+

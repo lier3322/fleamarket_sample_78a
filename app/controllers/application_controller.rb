@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth
   before_action :basic_auth, if: :production?
-
+  
   private
 
   def basic_auth
