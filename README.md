@@ -31,7 +31,7 @@ Things you may want to cover:
   |birthday|date|null: false|
   |password|integer|null: false|
   |first_name|string|null: false|
-  |second_name|string|null: false|
+  |last_name|string|null: false|
   |first_name_kana|string|null: false|
   |last_name_kana|string|null: false|
   |email_adress|string|null: false|
@@ -52,13 +52,14 @@ Things you may want to cover:
   |phone_number|string||
   |user_id|integer|null: false, foreign_key: true|
   Associations
-  belongs_to :users
+  belongs_to :user
 
 
   credit_cards
   |Column|Type|Options|
   |------|----|-------|
-  |card_number|integer|null: false|
+  |card_id|string|null: false|
+  |customer_id|string|null: false|
   |user_id|integer|null: false, foreign_key: true|
 
   Associations
@@ -71,10 +72,10 @@ Things you may want to cover:
   |product_name|text|null: false|
   |price|integer|null: false|
   |brand|string||
-  |size|size_id|null: false|
-  |product_status|status_id|null: false|
-  |delivery_fee|fee_id|null: false|
-  |delivery_time|time_id|null: false|
+  |size|integer|null: false|
+  |product_status|integer|null: false|
+  |delivery_fee|integer|null: false|
+  |delivery_time|integer|null: false|
   |delivery_area|string||
   |user_id|integer|null: false, foreign_key: true|
 
