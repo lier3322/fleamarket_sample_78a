@@ -18,10 +18,17 @@
       %li.list__brand
         = link_to "#" do
           ブランド
-    %ul.action__user
-      %li.user__login
-        = link_to root_path, class: "login_btn" do
-          ログイン
-      %li.user__new
-        = link_to root_path, class: "new_btn" do
-          新規会員登録
+
+    - if user_signed_in?
+      .action__user     
+        = link_to 'ログアウト', destroy_user_session_path, method: :delete
+    - else
+      %ul.action__user
+        %li.user__login
+          = link_to new_user_session_path, class: "login_btn" do
+            ログイン
+        %li.user__new
+          = link_to new_user_registration_path, class: "new_btn" do
+            新規会員登録
+
+

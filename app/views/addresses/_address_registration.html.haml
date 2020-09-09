@@ -1,0 +1,56 @@
+.registration-input-area
+  = form_with model: @address, local: true  do |f|
+    -# = render "devise/shared/error_messages", resource: resource
+    .registration-input-items-name
+      .registration-input-items-name__name
+        = f.label :postnumber ,'郵便番号'
+      .registration-input-items-name__icon--req
+        必須
+    .registration-input-items-field
+      = f.text_field :postnumber, autofocus: true, placeholder:'例）123-4567', class: 'input-box'
+    
+    .registration-input-items-name
+      .registration-input-items-name__name
+        = f.label :prefecture, '都道府県'
+      .registration-input-items-name__icon--req
+        必須
+    .registration-input-items-field
+      = f.text_field :prefecture, placeholder:'例）東京都', class: 'input-box'
+    
+    .registration-input-items-name
+      .registration-input-items-name__name
+        = f.label :city ,'市区町村'
+      .registration-input-items-name__icon--req
+        必須
+    .registration-input-items-field
+      = f.text_field :city, placeholder:'例）渋谷区〇〇', class: 'input-box'
+    
+    .registration-input-items-name
+      .registration-input-items-name__name
+        = f.label :house_number ,'番地'
+      .registration-input-items-name__icon--req
+        必須
+    .registration-input-items-field
+      = f.text_field :house_number, placeholder:'例）１−２−３', class: 'input-box'
+    
+    .registration-input-items-name
+      .registration-input-items-name__name
+        = f.label :building ,'建物名'
+      .registration-input-items-name__icon--any
+        任意
+    .registration-input-items-field
+      = f.text_field :building, placeholder:'例）XXビルディングZZZ', class: 'input-box'
+
+    .registration-input-items-name
+      .registration-input-items-name__name
+        = f.label :phone_number ,'電話番号'
+      .registration-input-items-name__icon--any
+        任意
+    .registration-input-items-field
+      = f.text_field :phone_number, placeholder:'例）01234567890', class: 'input-box'
+
+    .submit-btn
+      = f.submit "登録する", class: 'submit-btn__registration'
+
+
+-# = render "devise/shared/links"

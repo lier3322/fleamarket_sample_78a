@@ -48,6 +48,7 @@ Things you may want to cover:
   |postnumber|string|null: false|
   |prefecture|string|null: false|
   |city|string|null: false|
+  |house_number|string|null: false|
   |building|string||
   |phone_number|string||
   |user_id|integer|null: false, foreign_key: true|
