@@ -41,6 +41,7 @@
   @import "registration";
   @import "login";
   @import "footer-logo";
+  @import "index";
 
     .input-box {
       @include box-sizing(300px);
@@ -56,13 +57,6 @@
         margin-top: 10px;
       }
     }
-
-
-
-
-
-
-
 
 
 

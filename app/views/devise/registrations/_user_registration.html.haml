@@ -1,6 +1,6 @@
 .registration-input-area
   = form_for(resource, as: resource_name, url: registration_path(resource_name), local: true ) do |f|
-    = render "devise/shared/error_messages", resource: resource
+    -# = render "devise/shared/error_messages", resource: resource
     .registration-input-items-name
       .registration-input-items-name__name
         = f.label :nickname ,'ニックネーム'
