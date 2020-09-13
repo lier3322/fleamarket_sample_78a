@@ -1,1 +1,25 @@
-sakusei
+.user-handling-area
+  -# = render 'devise/header-logo'
+  .registration-header
+    .registration-header-logo
+      = image_tag 'logo/logo.png' ,size: '200x60', class:'header-logo__image'
+    %ol.registration-header-progress
+      %li.registration-header-progress-user__text--active{ id: "first" }
+        会員情報
+        .registration-header-progress-user__round--fin
+          ●
+      %li.registration-header-progress-address__text--active
+        お届け先住所
+        .registration-header-progress-address__round--fin
+          ●
+      %li.registration-header-progress-finish__text--active{ id: "end" }
+        完了
+        .registration-header-progress-finish__round--end
+          ●
+  .registration-title
+    会員登録が完了しました。
+    .return-top-page
+      = link_to 'トップページに戻る', root_path 
+  = render 'devise/footer_logo'
+
+  

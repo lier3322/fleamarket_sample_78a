@@ -1,0 +1,150 @@
+.registration-header {
+  display: flex;
+  margin: 20px 0px;
+  width: 600px;
+}
+
+.registration-header-logo {
+  &__image {
+    margin:20px;
+  }
+}
+
+.registration-header-progress {
+  width:240px;
+  height:40px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: auto;
+  position: relative;
+}
+
+
+.registration-header-progress-user,
+.registration-header-progress-address,
+.registration-header-progress-finish
+ {
+  &__text {
+    color: #777777;
+    text-align: center;
+    &--active {
+      text-align: center;
+      color: red
+    }
+  }
+
+  // &__round {
+  //   background: #777777;
+  //   text-align: center;
+  // }
+
+  //   &--now {
+  //     // position: absolute;
+  //     width: 15px;
+  //     height: 15px;
+  //     border-radius: 50%;
+  //     background: red;
+  //     text-align: center;
+  //   }
+
+  //   &--comp {
+  //     width: 15px;
+  //     height: 15px;
+  //     border-radius: 50%;
+  //     background: red;
+  //     text-align: center;
+  //   }
+
+  //   &--end {
+  //     width: 15px;
+  //     height: 15px;
+  //     border-radius: 50%;
+  //     background: #777777;
+  //     text-align: center;
+  //   }
+
+  //   &--next {
+  //     width: 15px;
+  //     height: 15px;
+  //     border-radius: 50%;
+  //     background: #777777;
+  //     text-align: center;
+  //   }
+}
+
+
+
+.registration-header-progress-user__round--now::before {
+  position: absolute;
+  top: 29px;
+  content: '';
+  width: 96px;
+  height: 2px;
+  background: #777777;
+  left: 33px;
+  // z-index: -1;
+}
+
+.registration-header-progress-user__round--fin::before {
+  position: absolute;
+  top: 29px;
+  content: '';
+  width: 96px;
+  height: 2px;
+  background: red;
+  left: 33px;
+}
+
+.registration-header-progress-address__round--next::before {
+  position: absolute;
+  top: 29px;
+  content: '';
+  width: 83px;
+  height: 2px;
+  background: #777777;
+  left: 139px;
+}
+
+.registration-header-progress-address__round--fin::before {
+  position: absolute;
+  top: 29px;
+  content: '';
+  width: 83px;
+  height: 2px;
+  background: red;
+  left: 139px;
+}
+
+
+
+
+// .registration-header-progress__round--now::before {
+//   position: absolute;
+//   top: 28px;
+//   width: 41%;
+//   height: 2px;
+//   background: #777777;
+//   content: '';
+// }
+
+// .registration-header-progress__round::after {
+//   position: absolute;
+//   top: 28px;
+//   width: 41%;
+//   height: 2px;
+//   background: #777777;
+//   left: 35px;
+//   content: '';
+// }
+
+// .registration-header-progress__round--now::after {
+//   position: absolute;
+//   top: 28px;
+//   width: 41%;
+//   height: 2px;
+//   background: red;
+//   left: 35px;
+//   content: '';
+// }
+
