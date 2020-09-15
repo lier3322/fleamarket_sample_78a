@@ -29,7 +29,6 @@ Things you may want to cover:
   |------|----|-------|
   |nickname|string|null: false|
   |birthday|date|null: false|
-  |password|integer|null: false|
   |first_name|string|null: false|
   |last_name|string|null: false|
   |first_name_kana|string|null: false|
@@ -48,7 +47,6 @@ Things you may want to cover:
   |postnumber|string|null: false|
   |prefecture|string|null: false|
   |city|string|null: false|
-  |house_number|string|null: false|
   |building|string||
   |phone_number|string||
   |user_id|integer|null: false, foreign_key: true|
@@ -74,11 +72,13 @@ Things you may want to cover:
   |price|integer|null: false|
   |brand|string||
   |size|integer|null: false|
-  |product_status|integer|null: false|
+  |product_status|boolean|null: false|
+  |trade_status|boolean|null: false|
   |delivery_fee|integer|null: false|
   |delivery_time|integer|null: false|
   |delivery_area|string||
   |user_id|integer|null: false, foreign_key: true|
+  |category_id|integer|null: false, foreign_key: true|
 
   Assosiation
   belongs_to :user
@@ -86,6 +86,7 @@ Things you may want to cover:
   belongs_to_active_hash :product_status
   belongs_to_active_hash :delivery_fee
   belongs_to_active_hash :delivery_time
+  belongs_to :categories
 
 
   images
@@ -96,6 +97,16 @@ Things you may want to cover:
 
   Assosiation
   belongs_to :product
+
+
+  categories
+  |Column|Type|Options|
+  |------|----|-------|
+  |category_name|string|null: false|
+  |ancestry|integer|null: false|
+
+  Associations
+  has_many :products
 
 
 
