@@ -47,6 +47,7 @@ Things you may want to cover:
   |postnumber|string|null: false|
   |prefecture|string|null: false|
   |city|string|null: false|
+  |house_number|string|null: false|
   |building|string||
   |phone_number|string||
   |user_id|integer|null: false, foreign_key: true|
@@ -72,8 +73,8 @@ Things you may want to cover:
   |price|integer|null: false|
   |brand|string||
   |size|integer|null: false|
-  |product_status|boolean|null: false|
-  |trade_status|boolean|null: false|
+  |product_status|integer|null: false|
+  |trading_status|integer|null: false|
   |delivery_fee|integer|null: false|
   |delivery_time|integer|null: false|
   |delivery_area|string||
@@ -82,11 +83,12 @@ Things you may want to cover:
 
   Assosiation
   belongs_to :user
+  has_many :images
   belongs_to_active_hash :size
   belongs_to_active_hash :product_status
   belongs_to_active_hash :delivery_fee
   belongs_to_active_hash :delivery_time
-  belongs_to :categories
+  belongs_to :category
 
 
   images
@@ -103,7 +105,7 @@ Things you may want to cover:
   |Column|Type|Options|
   |------|----|-------|
   |category_name|string|null: false|
-  |ancestry|integer|null: false|
+  |ancestry|string|null: false|
 
   Associations
   has_many :products
