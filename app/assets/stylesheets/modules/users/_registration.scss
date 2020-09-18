@@ -75,5 +75,15 @@
       }
   }
 
+.return-top-page {
+  @include centered;
+  justify-content: center;
+  background-color: white;
+  width: 600px;
+  height: 300px;
+  margin-bottom: 2px;
+  font-size: 20px;
+  font-weight: bold;
+}
 
 

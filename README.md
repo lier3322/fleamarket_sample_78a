@@ -52,6 +52,11 @@ Things you may want to cover:
   |building|string||
   |phone_number|string||
   |user_id|integer|null: false, foreign_key: true|
+  |first_name|string|null: false|
+  |last_name|string|null: false|
+  |first_name_kana|string|null: false|
+  |last_name_kana|string|null: false|
+  
   Associations
   belongs_to :user
 
