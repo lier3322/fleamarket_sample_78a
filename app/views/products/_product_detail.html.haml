@@ -1,0 +1,182 @@
+.header__box
+  .header__box__main
+    .main__icon
+      = link_to root_path do
+        = image_tag 'logo/logo.png', alt: 'title', height: '41', width: '140'
+    .main__search
+      = form_with(url: "#", local: true, method: :get, class: "search-form") do |form|
+        = form.text_field :keyword, placeholder: "キーワードから探す", class: "search-input"
+        = button_tag type: "submit", class: "search-btn" do
+          %i.fas.fa-search.fa-lg
+  .header__box__action
+
+    %ul.action__list
+      %li.list__category
+        = link_to "#" do
+          カテゴリー
+
+      %li.list__brand
+        = link_to "#" do
+          ブランド
+    %ul.action__user
+      %li.user__login
+        = link_to root_path, class: "login_btn" do
+          ログイン
+      %li.user__new
+        = link_to root_path, class: "new_btn" do
+          新規会員登録
+
+.breadcrumbs
+  %ul.breadcrumbs__test
+    %li.link
+      %a.link__text{ href: '#'}FURIMA
+    %li.link
+      = icon("fa", "angle-right")
+    %li.link
+      %a.link__text{ href: '#'}レディース
+    %li.link
+      = icon("fa", "angle-right")
+    %li.link
+      %a.link__text{ href: '#'}トップス
+    %li.link
+      = icon("fa", "angle-right")
+    %li.link
+      %a.link__text{ href: '#'}Tシャツ/カットソー(半袖/袖なし)
+    %li.link
+      = icon("fa", "angle-right")
+    %li.link
+      %a.link__text{ href: '#'}テスト
+  
+.main-contents
+  .main__show
+    .contents
+      .contents__text
+        %h2.image-name
+          テスト
+      .contents__image
+        = image_tag 'pict/beef.jpg', class: "beef-image"
+        .contents__image__small
+          = image_tag 'pict/beef.jpg', class: "beef-image-small"
+        .contents__price
+          %span.price
+            ¥10000
+        .contents__tax
+          %span.tax
+            (税込)送料込み
+      .contents__detail
+        .detail-text
+          テストテストテストテストテストテスト
+      .contents__table
+        %table.main-table
+          %tr.table
+            %th.left-table 出品者
+            %th.right-table あああ
+          %tr.table
+            %th.left-table カテゴリー
+            %th.right-table
+              %ul
+                %li
+                  %a.table-category{ href:"#"}レディース
+                %li
+                  %a.table-category{ href:"#"}トップス
+                %li
+                  %a.table-category{ href:"#"}Tシャツ/カットソー(半袖/袖なし)
+          %tr.table
+            %th.left-table ブランド
+            %th.right-table
+          %tr.table
+            %th.left-table 商品のサイズ
+            %th.right-table
+          %tr.table
+            %th.left-table 商品の状態
+            %th.right-table 新品/未使用
+          %tr.table
+            %th.left-table 配送料の負担
+            %th.right-table 送料込み(出品者負担)
+          %tr.table
+            %th.left-table 発送元の地域
+            %th.right-table
+              %a.table-category{ href:"#"}北海道
+          %tr.table
+            %th.left-table 発送日の目安
+            %th.right-table 1-2日で発送
+      .contents__option
+        %ul.options
+          %li.favorite
+            = icon('fa', 'star')
+            お気に入り 1
+        %ul.options
+          %li.report
+            = icon('fa', 'flag')
+            不適切な商品の通報
+      .contents__relations
+        .contents__relations--product
+          .products
+            %a.relation{:href => "#"}
+              レディースをもっと見る
+            .relation-picture
+              %a{href:"#"}
+                = image_tag 'pict/food_curryrice_white.png', class: 'curryrice'
+              .image__text
+                %h3.product-name
+                  product1
+                %ul.image-price
+                  %li.price-test 10000円
+                  %li
+                    = icon('far', 'thumbs-up')
+                  1
+                %p.tax-include
+                  (税込)
+                  
+.advertising
+  .advertising__DL
+    %h2.top-text
+      誰でもかんたん、人生を変えるフリマアプリ
+    %p.bottom-text
+      今すぐ無料ダウンロード!
+    .ad__icon
+      %a.app-icon
+        = image_tag 'bag_app.png', class: "appIcon"
+      %a.ggp-icon
+        = image_tag 'ja_badge_web_generic.png', class: "ggpIcon"
+
+.footer
+  %ul.contents
+    %li.content
+      %h2.content__head
+        FURIMAについて
+      %ul.content__bullet
+        %li
+          %a 会社概要(運営会社)
+        %li
+          %a プライバシーポリシー
+        %li
+          %a FURIMA利用規約
+        %li
+          %a ポイントに関する特約 
+    %li.content
+      %h2.content__head
+        FURIMAを見る
+      %ul.content__bullet
+        %li
+          %a カテゴリー一覧
+        %li
+          %a ブランド一覧
+    %li.content
+      %h2.content__head
+        ヘルプ＆ガイド
+      %ul.content__bullet
+        %li
+          %a FURIMAガイド
+        %li
+          %a FURIMAロゴ利用ガイドライン
+        %li
+          %a お知らせ
+  .footer__logo
+    = image_tag 'logo/logo-white.png', class: "logo-furima"
+  %p.copy-right
+    ©︎ FURIMA
+%a.sellbtn
+  %span.btn-text
+    出品する
+  = image_tag 'icon/icon_camera.png', class: "camera-btn"
