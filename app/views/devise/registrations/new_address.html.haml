@@ -1,0 +1,25 @@
+- if @user.nil?
+  = render 'users/avoid_error'
+- else
+  .user-handling-area
+    -# = render 'devise/header-logo'
+    .registration-header
+      .registration-header-logo
+        = image_tag 'logo/logo.png' ,size: '200x60', class:'header-logo__image'
+      %ol.registration-header-progress
+        %li.registration-header-progress-user__text--active{ id: "first" }
+          会員情報
+          .registration-header-progress-user__round--fin
+            ●
+        %li.registration-header-progress-address__text--active
+          お届け先住所
+          .registration-header-progress-address__round--next
+            ●
+        %li.registration-header-progress-finish__text{ id: "end" }
+          完了
+          .registration-header-progress-finish__round--end
+            ●
+    .registration-title
+      配送先情報登録
+    = render 'address_registration'
+    = render 'devise/footer_logo'

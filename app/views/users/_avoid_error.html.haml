@@ -1,0 +1,11 @@
+.user-handling-area
+  = render 'devise/header-logo'
+  .error-information
+    %h1 【読み込みエラー】 
+    %p ブラウザの戻る、または再読み込みが行われました。
+    %p お手数ですが、最初から操作をやり直してください。
+
+  = link_to '新規登録画面へ戻る', new_user_registration_path
+
+  = link_to 'トップページへ戻る', root_path
+  = render 'devise/footer_logo'

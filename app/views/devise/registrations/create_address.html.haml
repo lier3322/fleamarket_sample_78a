@@ -6,19 +6,20 @@
     %ol.registration-header-progress
       %li.registration-header-progress-user__text--active{ id: "first" }
         会員情報
-        .registration-header-progress-user__round--now
+        .registration-header-progress-user__round--fin
           ●
-      %li.registration-header-progress-address__text
+      %li.registration-header-progress-address__text--active
         お届け先住所
-        .registration-header-progress-address__round--next
+        .registration-header-progress-address__round--fin
           ●
-      %li.registration-header-progress-finish__text{ id: "end" }
+      %li.registration-header-progress-finish__text--active{ id: "end" }
         完了
         .registration-header-progress-finish__round--end
           ●
   .registration-title
-    会員情報入力
-  = render 'user_registration'
+    会員登録が完了しました。
+    .return-top-page
+      = link_to 'トップページに戻る', root_path 
   = render 'devise/footer_logo'
 
--# = render "devise/shared/links"
+  

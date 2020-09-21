@@ -1,0 +1,78 @@
+.registration-header {
+  display: flex;
+  margin: 20px 0px;
+  width: 600px;
+}
+
+.registration-header-logo {
+  &__image {
+    margin:20px;
+  }
+}
+
+.registration-header-progress {
+  width:240px;
+  height:40px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: auto;
+  position: relative;
+}
+
+
+.registration-header-progress-user,
+.registration-header-progress-address,
+.registration-header-progress-finish
+ {
+  &__text {
+    color: #777777;
+    text-align: center;
+    &--active {
+      text-align: center;
+      color: red
+    }
+  }
+}
+
+
+
+.registration-header-progress-user__round--now::before {
+  position: absolute;
+  top: 29px;
+  content: '';
+  width: 96px;
+  height: 2px;
+  background: #777777;
+  left: 33px;
+}
+
+.registration-header-progress-user__round--fin::before {
+  position: absolute;
+  top: 29px;
+  content: '';
+  width: 96px;
+  height: 2px;
+  background: red;
+  left: 33px;
+}
+
+.registration-header-progress-address__round--next::before {
+  position: absolute;
+  top: 29px;
+  content: '';
+  width: 83px;
+  height: 2px;
+  background: #777777;
+  left: 139px;
+}
+
+.registration-header-progress-address__round--fin::before {
+  position: absolute;
+  top: 29px;
+  content: '';
+  width: 83px;
+  height: 2px;
+  background: red;
+  left: 139px;
+}
