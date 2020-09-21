@@ -16,3 +16,9 @@ Rails.application.routes.draw do
   
   # resources :addresses , only: [:new, :create ]
 end
+
+  resources :users, only: [:index]
+
+  resources :products, except: :show  
+  resources :addresses , only: [:new, :create ]
+  end
