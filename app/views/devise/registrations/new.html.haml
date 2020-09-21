@@ -1,0 +1,24 @@
+.user-handling-area
+  -# = render 'devise/header-logo'
+  .registration-header
+    .registration-header-logo
+      = image_tag 'logo/logo.png' ,size: '200x60', class:'header-logo__image'
+    %ol.registration-header-progress
+      %li.registration-header-progress-user__text--active{ id: "first" }
+        会員情報
+        .registration-header-progress-user__round--now
+          ●
+      %li.registration-header-progress-address__text
+        お届け先住所
+        .registration-header-progress-address__round--next
+          ●
+      %li.registration-header-progress-finish__text{ id: "end" }
+        完了
+        .registration-header-progress-finish__round--end
+          ●
+  .registration-title
+    会員情報入力
+  = render 'user_registration'
+  = render 'devise/footer_logo'
+
+-# = render "devise/shared/links"

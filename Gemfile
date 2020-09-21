@@ -40,6 +40,10 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
   # ここまで
+  gem 'rspec-rails', '~> 4.0.0.beta2'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'gimei'
 end
 
 group :development do
@@ -69,4 +73,5 @@ end
 # ここまで
 
 gem "haml-rails", ">= 1.0", '<= 2.0.1'
-gem "font-awesome-sass"
+gem 'font-awesome-sass'
+gem 'devise'

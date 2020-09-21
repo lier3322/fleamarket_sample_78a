@@ -111,10 +111,6 @@
         margin-left: auto;
         display: flex;
 
-        .mypage {
-          line-height: 30px;
-        }
-
         .user__login{
           line-height: 30px;
           padding-left: 30px;
@@ -144,6 +140,16 @@
             color: orange;
           }
         }
+
+        .mypage_btn {
+          text-decoration: none;
+          color: black;
+        }
+
+        .mypage_btn:hover{
+          color: orange;
+        }
+
         .mypage{
           color: #333;
           line-height: 30px;

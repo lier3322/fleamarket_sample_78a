@@ -1,0 +1,62 @@
+// 中央揃え
+@mixin centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// ログイン・入力フォームの背景色
+@mixin user-info-input($width) {
+  padding: 20px 0px;
+  text-align: center;
+  background-color: white;
+  width: $width;
+  margin-bottom: 20px;
+}
+
+// 必須・任意アイコン設定
+@mixin icon($bkc) {
+  background-color: $bkc;
+  width: 30px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 11px;
+  text-align: center;
+  color: white;
+}
+
+// 入力フォームの縦幅共通化
+@mixin box-sizing($width) {
+  width: $width;
+  height:40px;
+  line-height: 40px;
+}
+
+.user-handling-area {
+  @include centered;
+  background-color: #f8f8f8;
+}
+
+  @import "registration-header";
+  @import "registration";
+  @import "login";
+  @import "footer-logo";
+  @import "index";
+
+    .input-box {
+      @include box-sizing(300px);
+    }
+
+    .submit-btn {
+      &__login, &__registration {
+        width: 200px;
+        height: 60px;
+        background-color: #ffb340;
+        border: none;
+        color: white;
+        margin-top: 10px;
+      }
+    }
+
+
+
