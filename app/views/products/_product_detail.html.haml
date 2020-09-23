@@ -29,23 +29,28 @@
 .breadcrumbs
   %ul.breadcrumbs__test
     %li.link
-      %a.link__text{ href: '#'}FURIMA
+      =link_to "#", class: "link__text" do
+        FURIMA
     %li.link
       = icon("fa", "angle-right")
     %li.link
-      %a.link__text{ href: '#'}レディース
+      =link_to "#", class: "link__text" do
+        レディース
     %li.link
       = icon("fa", "angle-right")
     %li.link
-      %a.link__text{ href: '#'}トップス
+      =link_to "#", class: "link__text" do
+        トップス
     %li.link
       = icon("fa", "angle-right")
     %li.link
-      %a.link__text{ href: '#'}Tシャツ/カットソー(半袖/袖なし)
+      =link_to "#", class: "link__text" do
+        Tシャツ/カットソー(半袖/袖なし)
     %li.link
       = icon("fa", "angle-right")
     %li.link
-      %a.link__text{ href: '#'}テスト
+      =link_to "#", class: "link__text" do
+        テスト
   
 .main-contents
   .main__show
@@ -76,11 +81,14 @@
             %th.right-table
               %ul
                 %li
-                  %a.table-category{ href:"#"}レディース
+                  =link_to "#", class: "table-category" do
+                    レディース
                 %li
-                  %a.table-category{ href:"#"}トップス
+                  =link_to "#", class: "table-category" do
+                    トップス
                 %li
-                  %a.table-category{ href:"#"}Tシャツ/カットソー(半袖/袖なし)
+                  =link_to "#", class: "table-category" do
+                    Tシャツ/カットソー(半袖なし)
           %tr.table
             %th.left-table ブランド
             %th.right-table
@@ -96,7 +104,8 @@
           %tr.table
             %th.left-table 発送元の地域
             %th.right-table
-              %a.table-category{ href:"#"}北海道
+              =link_to "#", class: "table-category" do
+                北海道
           %tr.table
             %th.left-table 発送日の目安
             %th.right-table 1-2日で発送
@@ -112,11 +121,10 @@
       .contents__relations
         .contents__relations--product
           .products
-            %a.relation{:href => "#"}
+            =link_to "#", class: "relation" do
               レディースをもっと見る
             .relation-picture
-              %a{href:"#"}
-                = image_tag 'pict/food_curryrice_white.png', class: 'curryrice'
+              =link_to image_tag(src= "pict/food_curryrice_white.png", class: "curryrice"), "#"
               .image__text
                 %h3.product-name
                   product1

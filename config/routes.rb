@@ -12,13 +12,9 @@ Rails.application.routes.draw do
   resources :products do
   end
   resources :users, only: [:index]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  
-  # resources :addresses , only: [:new, :create ]
 end
 
-  resources :users, only: [:index]
+  # resources :users, only: [:index]
 
-  resources :products, except: :show  
-  resources :addresses , only: [:new, :create ]
-  end
+  # resources :products, except: :show  
+  # resources :addresses , only: [:new, :create ]
