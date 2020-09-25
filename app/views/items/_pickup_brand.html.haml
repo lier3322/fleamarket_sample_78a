@@ -9,8 +9,9 @@
       .pickup_brand__containerBrand__product--lists
         
         .pickup_brand__containerBrand__product--lists__list
-          %figure.pickup_brand__product__images
-            = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', alt: "image_url", class:"pickup_brand__product__images--image"
+          = link_to product_path(1) do
+            %figure.pickup_brand__product__images
+              = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', alt: "image_url", class:"pickup_brand__product__images--image"
           .pickup_brand__containerBrand__product--lists__list__body
             %h3.pickup_brand__product--name
               fuga1
