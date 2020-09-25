@@ -8,12 +8,17 @@ Rails.application.routes.draw do
   end
 
   root to: 'items#index'
+  
+  get 'users/:id', to: 'mypages#show'
+
+  get 'creditcards/:id', to: 'creditcards#index'
 
   resources :products do
   end
   resources :users, only: [:index]
+  resources :mypages, only: [:show]
+  resources :creditcards, only: [:new, :create]
 end
-
   # resources :users, only: [:index]
 
   # resources :products, except: :show  
