@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :user
-  has_many :images
+  has_many :images, dependent: :destroy
 
   # 商品一覧にて実装しないのでコメントアウト。次回実装時にお使いくださいませ。
   extend ActiveHash::Associations::ActiveRecordExtensions
@@ -16,5 +16,6 @@ class Product < ApplicationRecord
   # enum trading_status: {出品中: 1, 売買済: 2}
 
   accepts_nested_attributes_for :images, allow_destroy: true
-
+  validates_associated :images
+  validates :images, presence: true
 end
