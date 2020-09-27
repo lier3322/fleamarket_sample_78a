@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   # resources :products do
 
-  resources :products, only: [:show, :new, :create]  
+  resources :products, only: [:show, :new, :create, :index]  
   resources :addresses , only: [:new, :create ]
 
   # end
