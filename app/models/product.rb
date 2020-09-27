@@ -15,4 +15,6 @@ class Product < ApplicationRecord
   # 列挙型：trading_statusの定義。商品一覧作成時はコメントアウト。次回実装時にお使いくださいませ。
   # enum trading_status: {出品中: 1, 売買済: 2}
 
+  accepts_nested_attributes_for :images, allow_destroy: true
+
 end
