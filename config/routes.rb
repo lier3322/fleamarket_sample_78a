@@ -8,6 +8,13 @@ Rails.application.routes.draw do
   end
 
   root to: 'items#index'
+
+  # resources :products do
+
+  resources :products, only: [:show, :new, :create, :index]  
+  resources :addresses , only: [:new, :create ]
+
+  # end
   resources :users, only: [:index]
 
   resources :products, except: :show  
