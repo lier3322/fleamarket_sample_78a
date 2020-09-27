@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   resources :products do
   end
   resources :users, only: [:index]
-  resources :mypages, only: [:show]
-  resources :creditcards, only: [:new, :create]
+  resources :mypages, only: [:show, :index]
+  resources :creditcards, only: [:new, :create, :edit, :update,]
 end
   # resources :users, only: [:index]
 
