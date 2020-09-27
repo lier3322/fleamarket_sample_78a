@@ -1,6 +1,10 @@
 = form_with model: @product do |f|
   = f.text_field :product_name, placeholder: "商品名"
   = f.text_field :product_detail, placeholder: "説明文"
+
+  = f.fields_for :images do |i|
+    = i.file_field :image
+
   = f.select :category, [["カテゴリー（仮）", 0], ["レディース", 1], ["メンズ", 2], ["ベビー・キッズ", 3], ["インテリア・住まい・子供", 4]]
   = f.text_field :brand, placeholder: "ブランド"
  
