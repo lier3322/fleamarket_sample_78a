@@ -1,0 +1,52 @@
+@mixin product_box($size){
+  padding:30px;
+  width:720px;
+  height: $size;
+}
+
+@mixin product_name{
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4em;
+}
+
+@mixin product_required($color){
+  margin-left:8px;
+  font-size: 14px;
+  width:35px;
+  color:white;
+  background-color: $color;
+  text-align:center;
+}
+
+@mixin product_field{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0 16px;
+  margin-top: 20px;
+  width: 640px;
+  height:50px;
+}
+
+@mixin product_select{
+  width:640px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #222;
+  font-size: 16px;
+  height: 48px;
+  line-height: 1;
+}
+
+@mixin product_priceBox{
+  display: flex;
+  align-items: center;
+  box-sizing: content-box;
+}
+
+@mixin product_fieldBox{
+  display: flex;
+  margin-top: 40px;
+}
