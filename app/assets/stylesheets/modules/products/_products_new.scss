@@ -1,0 +1,311 @@
+*{
+  box-sizing: border-box;
+}
+
+.entire_box{
+  display:flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #F0F0F0;
+  .new__page__header{
+    height: 80px;
+    text-align: center;
+    padding-top: 15px;
+    img {
+      width: 150px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+  }
+  .product__field{
+    background-color: white;
+    margin: 0px auto;
+    width: 700px;
+    &__box{
+      @include product_box(200px);
+      .product__label{
+        display: flex;
+        &__name{
+          @include product_name;
+        }
+        &__required{
+          @include product_required(#3ccace);
+        }
+      }
+      .image__box{
+        margin: 20px 18px 0 0;
+        height: 110px;
+        background-color: #F0F0F0;
+        border: 1px dashed rgb(204, 204, 204);
+        cursor: pointer;
+        &__label{
+          height:130px;
+            i{
+              height: 100px;
+              width: 640px;
+              padding: 45px 360px 0px 320px;
+            }
+            .Hidden{
+              display:none;
+            }
+        }
+      }
+    }
+    .product__name__box{
+      @include product_box(130px);
+      .product__textField{
+        display: flex;
+        &__name{
+          @include product_name;
+        }
+        &__required{
+          @include product_required(#3ccace);
+        }
+      }
+      .product_field{
+        @include product_field;
+      }
+    }
+    .product__explanation__box{
+      @include product_box(100px);
+      .product__explanationField{
+        display: flex;
+        &__name{
+          @include product_name;
+        }
+        &__required{
+          @include product_required(#3ccace);
+        }
+      }
+      .style_textarea{
+        margin-top: 16px;
+        width: 641px;
+        height: 140px;
+        padding: 8px;
+      }
+    }
+    .product__category__box{
+      @include product_box(100px);
+      margin-top: 130px;
+      .product__details{
+        @include product_name;
+        color: rgb(204, 204, 204);
+        margin-bottom: 24px;
+        .product__categoryField{
+          @include product_fieldBox;
+          &__name{
+            @include product_name;
+            color:black;
+          }
+          &__required{
+            @include product_required(#3ccace);
+          }
+        }
+        .category__styleSelect{
+          margin-top: 16px;
+          &__selectarea{
+            select{
+              @include product_select;
+            }
+          }
+        }
+      }
+    }
+    .product__brand__box{
+      @include product_box(100px);
+      margin-top: 50px;
+      .product__brandField{
+        @include product_fieldBox;
+        &__name{
+          @include product_name;
+        }
+        &__required{
+          @include product_required(#bfbfbf);
+        }
+      }
+      .brand_field{
+        @include product_field;
+      }
+    }
+    .product__status__box{
+      @include product_box(100px);
+      margin-top: 50px;
+      .product__statusField{
+        @include product_fieldBox;
+        &__name{
+          @include product_name;
+        }
+        &__required{
+          @include product_required(#3ccace);
+        }
+      }
+      .category__statusSelect{
+        margin-top: 16px;
+        &__selectarea{
+          select{
+            @include product_select;
+          }
+        }
+      }
+    }
+    .product__size__box{
+      @include product_box(100px);
+      margin-top: 50px;
+      .product__sizeField{
+        @include product_fieldBox;
+        &__name{
+          @include product_name;
+        }
+        &__required{
+          @include product_required(#3ccace);
+        }
+      }
+      .category__sizeSelect{
+        margin-top: 16px;
+        &__selectarea{
+          select{
+            @include product_select;
+            font-weight: 550;
+          }
+        }
+      }
+
+
+    }
+    .product__delivery__box{
+      @include product_box(100px);
+      margin-top: 80px;
+      .product__regardingDelivery{
+        @include product_name;
+        color: rgb(204, 204, 204);
+        margin-bottom: 24px;
+        .product__deliveryField{
+          @include product_fieldBox;
+          &__name{
+            @include product_name;
+            color:black;
+            }
+          &__required{
+            @include product_required(#3ccace);
+          }
+        }
+        .delivery__styleSelect{
+          margin-top: 16px;
+          &__selectarea{
+            select{
+              @include product_select;
+            }
+          }
+        }
+      }
+    }
+    .product__area__box{
+      @include product_box(100px);
+      margin-top: 50px;
+      .product__areaField{
+        @include product_fieldBox;
+        &__name{
+          @include product_name;
+          color:black;
+        }
+        &__required{
+          @include product_required(#3ccace);
+        }
+      }
+      .category__areaSelect{
+        margin-top: 16px;
+        &__selectarea{
+          select{
+            @include product_select;
+          }
+        }
+      }
+    }
+    .product__shippingDays__box{
+      @include product_box(100px);
+      margin-top: 50px;
+      .product__shippingDaysField{
+        @include product_fieldBox;
+        &__name{
+          @include product_name;
+          color:black;
+        }
+        &__required{
+          @include product_required(#3ccace);
+        }
+      }
+      .category__shippingDaysSelect{
+        margin-top: 16px;
+        &__selectarea{
+          select{
+            @include product_select;
+          }
+        }
+      }
+    }
+    .product__price__box{
+      @include product_box(100px);
+      margin-top: 80px;
+      .product__priceRange{
+        @include product_name;
+        color: rgb(204, 204, 204);
+        margin-bottom: 24px;
+        .product__priceField{
+          @include product_priceBox;
+          margin-top: 40px;
+          &__box{
+            width: 470px;
+            display: flex;
+            &__name{
+              @include product_name;
+              color:black;
+            }
+            &__required{
+              @include product_required(#3ccace);
+            }
+          }
+          .test{
+            display: flex;
+            .product__price__yen{
+              font-size: 14px;
+              margin-right: 8px;
+              color: rgb(51, 51, 51);
+              padding-top: 15px;
+            }
+            .product__priceRangeBox{
+              align-items: center;
+              display: inline-flex;
+              padding-right: 20px;
+              &__inputarea{
+                input{
+                  width: 150px;
+                  height: 50px;
+                  text-align: right;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .product__submitBotton__box{
+      @include product_box(100px);
+      margin-top: 50px;
+      .product__submitBottonField{
+        @include product_priceBox;
+        padding-bottom: 50px;
+        margin-top: 40px 20px 0 0;
+        button{
+          background-color: #3ccace;
+          color: #fff;
+          font-size: 17px;
+          min-height: 48px;
+          width:100%;
+          border-style:none;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
+

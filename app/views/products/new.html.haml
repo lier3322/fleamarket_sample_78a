@@ -1,0 +1,200 @@
+- if user_signed_in?
+  .entire_box
+    .new__page__header
+      = link_to image_tag("logo/logo.png", alt: "logo"), root_path
+    .product__field
+      .product__field__box
+        .product__label
+          .product__label__name      
+            出品画像
+          .product__label__required
+            必須
+        .image__box
+          %label.image__box__label
+            %i.fas.fa-camera
+            %input{type: "file", class: 'Hidden'}
+      .product__name__box
+        .product__textField
+          .product__textField__name      
+            商品名
+          .product__textField__required
+            必須
+        = text_field_tag "product_name", "", {class: "product_field",placeholder: "40字まで"}
+      .product__explanation__box
+        .product__explanationField
+          .product__explanationField__name      
+            商品の説明
+          .product__explanationField__required
+            必須
+        %textarea.style_textarea{name:"description", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n  ", rows: "7"}
+      .product__category__box
+        .product__details
+          商品の詳細
+          .product__categoryField
+            .product__categoryField__name      
+              カテゴリー
+            .product__categoryField__required
+              必須
+          .category__styleSelect
+            .category__styleSelect__selectarea
+              %select{name: "categoryId"}
+                %option{"aria-selected" => "true", label: "選択してください", selected: "selected" } 選択してください
+                %option{"aria-selected" => "false", label: "レディース"} レディース
+                %option{"aria-selected" => "false", label: "メンズ"} メンズ
+                %option{"aria-selected" => "false", label: "ベビー・キッズ"} ベビー・キッズ
+                %option{"aria-selected" => "false", label: "インテリア・住まい・小物"} インテリア・住まい・小物
+                %option{"aria-selected" => "false", label: "本・音楽・ゲーム"} 本・音楽・ゲーム
+                %option{"aria-selected" => "false", label: "おもちゃ・ホビー・グッズ"} おもちゃ・ホビー・グッズ
+                %option{"aria-selected" => "false", label: "コスメ・香水・美容"} コスメ・香水・美容
+                %option{"aria-selected" => "false", label: "家電・スマホ・カメラ"} 家電・スマホ・カメラ
+                %option{"aria-selected" => "false", label: "スポーツ・レジャー"} スポーツ・レジャー
+                %option{"aria-selected" => "false", label: "ハンドメイド"} ハンドメイド
+                %option{"aria-selected" => "false", label: "チケット"} チケット
+                %option{"aria-selected" => "false", label: "自動車・オートバイ"} 自動車・オートバイ
+                %option{"aria-selected" => "false", label: "その他"} その他
+      .product__brand__box
+        .product__brandField
+          .product__brandField__name      
+            ブランド
+          .product__brandField__required
+            任意
+        = text_field_tag "brand_name", "", {class: "brand_field",placeholder: "例） シャネル"}
+      .product__status__box
+        .product__statusField
+          .product__statusField__name      
+            商品の状態
+          .product__statusField__required
+            必須
+        .category__statusSelect
+          .category__statusSelect__selectarea
+            %select{name: "itemCondition"}
+              %option{"aria-selected" => "true", label: "選択してください"} 選択してください
+              %option{"aria-selected" => "false", label: "新品、未使用"} 新品、未使用
+              %option{"aria-selected" => "false", label: "未使用に近い"} 未使用に近い
+              %option{"aria-selected" => "false", label: "目立った傷や汚れなし"} 目立った傷や汚れなし
+              %option{"aria-selected" => "false", label: "やや傷や汚れあり"} やや傷や汚れあり
+              %option{"aria-selected" => "false", label: "傷や汚れあり"} 傷や汚れあり
+              %option{"aria-selected" => "false", label: "全体的に状態が悪い"} 全体的に状態が悪い
+      .product__size__box
+        .product__sizeField
+          .product__sizeField__name      
+            サイズ
+          .product__sizeField__required
+            必須
+        .category__sizeSelect
+          .category__sizeSelect__selectarea
+            %select{name:"size"}
+              %option{"aria-selected" => "true", label: "選択してください"} 選択してください
+              %option{"aria-selected" => "false", label: "XXS以下" } XXS以下
+              %option{"aria-selected" => "false", label: "XS(SS)"} XS(SS)
+              %option{"aria-selected" => "false", label: "S"} S
+              %option{"aria-selected" => "false", label: "M"} M
+              %option{"aria-selected" => "false", label: "L"} L
+              %option{"aria-selected" => "false", label: "XL(LL)"} XL(LL)
+              %option{"aria-selected" => "false", label: "2XL(3L)"} 2XL(3L)
+              %option{"aria-selected" => "false", label: "3XL(4L)"} 3XL(4L)
+              %option{"aria-selected" => "false", label: "4XL(5L)以上"} 4XL(5L)以上
+              %option{"aria-selected" => "false", label: "FREE SIZE"} FREE SIZE
+      .product__delivery__box
+        .product__regardingDelivery
+          配送について
+          .product__deliveryField
+            .product__deliveryField__name      
+              配送料の負担
+            .product__deliveryField__required
+              必須
+          .delivery__styleSelect
+            .delivery__styleSelect__selectarea
+              %select{name: "shippingPayer"}
+                %option{"aria-selected" => "true", label: "選択してください", selected:  "selected"} 選択してください
+                %option{"aria-selected" => "false", label: "送料込み(出品者負担)"} 送料込み(出品者負担)
+                %option{"aria-selected" => "false", label: "着払い(購入者負担)"} 着払い(購入者負担)
+      .product__area__box
+        .product__areaField
+          .product__areaField__name      
+            発送元の地域
+          .product__areaField__required
+            必須
+        .category__areaSelect
+          .category__areaSelect__selectarea
+            %select{name: "shippingFromArea"}
+              %option{"aria-selected" => "true", label: "選択してください", selected: "selected"} 選択してください
+              %option{"aria-selected" => "false", label: "北海道"} 北海道
+              %option{"aria-selected" => "false", label: "青森県"} 青森県
+              %option{"aria-selected" => "false", label: "岩手県"}岩手県
+              %option{"aria-selected" => "false", label: "宮城県"} 宮城県
+              %option{"aria-selected" => "false", label: "秋田県"} 秋田県
+              %option{"aria-selected" => "false", label: "山形県"} 山形県
+              %option{"aria-selected" => "false", label: "福島県"} 福島県
+              %option{"aria-selected" => "false", label: "茨城県"} 茨城県
+              %option{"aria-selected" => "false", label: "栃木県"} 栃木県
+              %option{"aria-selected" => "false", label: "群馬県"} 群馬県
+              %option{"aria-selected" => "false", label: "埼玉県"} 埼玉県
+              %option{"aria-selected" => "false", label: "千葉県"} 千葉県
+              %option{"aria-selected" => "false", label: "東京都"} 東京都
+              %option{"aria-selected" => "false", label: "神奈川県"} 神奈川県
+              %option{"aria-selected" => "false", label: "新潟県"} 新潟県
+              %option{"aria-selected" => "false", label: "富山県"} 富山県
+              %option{"aria-selected" => "false", label: "石川県"} 石川県
+              %option{"aria-selected" => "false", label: "福井県"} 福井県
+              %option{"aria-selected" => "false", label: "山梨県"} 山梨県
+              %option{"aria-selected" => "false", label: "長野県"} 長野県
+              %option{"aria-selected" => "false", label: "岐阜県"} 岐阜県
+              %option{"aria-selected" => "false", label: "静岡県"} 静岡県
+              %option{"aria-selected" => "false", label: "愛知県"} 愛知県
+              %option{"aria-selected" => "false", label: "三重県"} 三重県
+              %option{"aria-selected" => "false", label: "滋賀県"} 滋賀県
+              %option{"aria-selected" => "false", label: "京都府"} 京都府
+              %option{"aria-selected" => "false", label: "大阪府"} 大阪府
+              %option{"aria-selected" => "false", label: "兵庫県"} 兵庫県
+              %option{"aria-selected" => "false", label: "奈良県"} 奈良県
+              %option{"aria-selected" => "false", label: "和歌山県"} 和歌山県
+              %option{"aria-selected" => "false", label: "鳥取県"} 鳥取県
+              %option{"aria-selected" => "false", label: "島根県"} 島根県
+              %option{"aria-selected" => "false", label: "岡山県"} 岡山県
+              %option{"aria-selected" => "false", label: "広島県"} 広島県
+              %option{"aria-selected" => "false", label: "山口県"} 山口県
+              %option{"aria-selected" => "false", label: "徳島県"} 徳島県
+              %option{"aria-selected" => "false", label: "香川県"} 香川県
+              %option{"aria-selected" => "false", label: "愛媛県"} 愛媛県
+              %option{"aria-selected" => "false", label: "高知県"} 高知県
+              %option{"aria-selected" => "false", label: "福岡県"} 福岡県
+              %option{"aria-selected" => "false", label: "佐賀県"} 佐賀県
+              %option{"aria-selected" => "false", label: "長崎県"} 長崎県
+              %option{"aria-selected" => "false", label: "熊本県"} 熊本県
+              %option{"aria-selected" => "false", label: "大分県"} 大分県
+              %option{"aria-selected" => "false", label: "宮崎県"} 宮崎県
+              %option{"aria-selected" => "false", label: "鹿児島県"} 鹿児島県
+              %option{"aria-selected" => "false", label: "沖縄県"} 沖縄県
+              %option{"aria-selected" => "false", label: "未定"} 未定
+      .product__shippingDays__box
+        .product__shippingDaysField
+          .product__shippingDaysField__name      
+            発送までの日数
+          .product__shippingDaysField__required
+            必須
+        .category__shippingDaysSelect
+          .category__shippingDaysSelect__selectarea
+            %select{name: "shippingDuration"}
+              %option{"aria-selected" => "true", label: "選択してください", selected: "selected"} 選択してください
+              %option{"aria-selected" => "false", label: "1~2日で発送"} 1~2日で発送
+              %option{"aria-selected" => "false", label: "2~3日で発送"} 2~3日で発送
+              %option{"aria-selected" => "false", label: "4~7日で発送"} 4~7日で発送
+      .product__price__box
+        .product__priceRange
+          価格（¥300〜9,999,999）
+          .product__priceField
+            .product__priceField__box
+              .product__priceField__box__name      
+                配送料の負担
+              .product__priceField__box__required
+                必須
+            .test
+              .product__price__yen
+                ￥
+              .product__priceRangeBox
+                .product__priceRangeBox__inputarea
+                  %input{autocomplete: "off", kl_vkbd_parsed: "true", name: "price", placeholder: "0", type: "number", value: ""}/
+      .product__submitBotton__box
+        .product__submitBottonField
+          %button.submitBotton{tabindex: "0", type: "submit"} 出品する
