@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:index]
   resources :mypages, only: [:show, :index]
-  resources :creditcards, only: [:new, :create, :edit, :update,]
+  resources :creditcards, only: [:new, :create, :edit, :update]
 end
   # resources :users, only: [:index]
 

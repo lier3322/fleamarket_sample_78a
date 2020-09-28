@@ -16,22 +16,6 @@ class CreditcardsController < ApplicationController
     end
   end
 
-  def show
-
-  end
-
-  def edit
-  end
-
-  def update
-    @creditcard = Creditcard.find(params[:_id])
-    if @group.update(group_params)
-      redirect_to root_path
-    else
-      render :edit
-    end
-  end
-
   private
 
   def creditcard_params
