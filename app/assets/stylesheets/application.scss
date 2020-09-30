@@ -19,9 +19,14 @@
 
 @import "modules/flash";
 
+
+@import "mypages";
+@import "creditcards";
+
 // 商品一覧ページ
 @import "modules/products/products_index";
 
 // 商品出品ページ
 @import "mixin/new_product";
 @import "modules/products/products_new";
+
