@@ -87,7 +87,7 @@
   |Column|Type|Options|
   |------|----|-------|
   |category_name|string|null: false|
-  |ancestry|string|null: false|
+  |ancestry|string||
 
   Associations
   has_many :products
