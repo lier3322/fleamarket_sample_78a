@@ -21,7 +21,7 @@
 
     - if user_signed_in?
       .action__user     
-        = link_to 'マイページ', destroy_user_session_path, method: :delete, class: "mypage_btn"
+        = link_to 'マイページ', mypage_path(:current_user), class: "mypage_btn"
     - else
       %ul.action__user
         %li.user__login
