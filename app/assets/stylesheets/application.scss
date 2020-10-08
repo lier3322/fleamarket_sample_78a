@@ -23,3 +23,8 @@
 // 商品出品ページ
 @import "mixin/new_product";
 @import "modules/products/products_new";
+@import "error_messages";
+
+// 商品詳細ページ
+@import "modules/product_detail";
+@import "modules/products_show";
