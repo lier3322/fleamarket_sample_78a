@@ -1,7 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :user
   has_many :images, dependent: :destroy
-  
 
   # 商品一覧にて実装しないのでコメントアウト。次回実装時にお使いくださいませ。
   extend ActiveHash::Associations::ActiveRecordExtensions
