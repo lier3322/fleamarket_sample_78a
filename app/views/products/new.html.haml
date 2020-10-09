@@ -7,31 +7,31 @@
       .product__field
         .product__field__box
           .product__label
-            -# .product__label__name      
-            -#   出品画像
-            -# .product__label__required
-            -#   必須
-            -# .product__label__text
-            -#   ※最大10枚までアップロードできます
+            .product__label__name      
+              出品画像
+            .product__label__required
+              必須
+            .product__label__text
+              ※最大10枚までアップロードできます
             -#       = form_with model: @product, class: "form", id: "product-form" do |f|
           .form-image
-            .form-image__title
-              %label 出品画像
-              %span 必須
-              .form-image__text 最大10枚までアップロードできます
-              = f.fields_for :images do |image|
-                .clearfix.image_file_box
-                  // 写真のプレビューとインプットボタンのul
-                  %ul#previews
-                    %li.input
-                      // 画像を取り込むインプットボタン
-                      %label.upload-label
-                        .upload-label__text
-                          ドラッグアンドドロップ
-                          %br
-                          またはクリックしてファイルをアップロード
-                          .input-area
-                            = image.file_field :image, class: "hidden image_upload"
+            -# .form-image__title
+            -#   %label 出品画像
+            -#   %span 必須
+            -#   .form-image__text 最大5枚までアップロードできます
+            = f.fields_for :images do |image|
+              .clearfix.image_file_box
+                // 写真のプレビューとインプットボタンのul
+                %ul#previews
+                  %li.input
+                    // 画像を取り込むインプットボタン
+                    %label.upload-label
+                      .upload-label__text
+                        -# ドラッグアンドドロップ
+                        -# %br
+                        ファイルをアップロード
+                        .input-area
+                          = image.file_field :image, class: "hidden image_upload"
         -# = f.fields_for :images do |image|
         -#   .image-box
         -#     %ul#previews

@@ -329,14 +329,27 @@
 }
 
 #previews {
-  width: 700px;
+  width: 650px;
   display: flex;
   // flex-wrap: wrap;
- 
+  margin-top: 10px;
+  height: 150px;
+  text-align: center;
+  line-height: 150px;
 }
 
 .input {
   background-color: #F0F0F0;
   width: 650px;
   margin :0px 25px;
+}
+
+.image-preview {
+  &__wrapper {  
+    height: 50px;
+  }
+}
+
+.image-preview_btn_delete {
+  height: 30px;
 }
