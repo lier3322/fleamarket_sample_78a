@@ -14,7 +14,6 @@ describe Product do
       product = build(:product)
       product.images=[]
       product.valid?
-      # binding.pry
       expect(product.errors.full_messages).to include("画像は1つ以上登録してください")
     end
 
