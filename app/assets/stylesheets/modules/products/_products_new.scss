@@ -51,24 +51,6 @@
         }
       }
 
-      // 検証用
-      .image-preview {
-        width: 50px;
-        height: 50px;
-        &__wrapper {
-          height: 100px;
-          background-color: #F0F0F0;
-        }
-      }
-
-      img.preview {
-        width: 100px;
-        height: 100px;
-      }
-
-
-
-
     }
     .product__name__box{
       @include product_box(130px);
@@ -328,14 +310,28 @@
   }
 }
 
+
+// 商品画像プレビュー表示箇所
+
 #previews {
   width: 650px;
   display: flex;
-  // flex-wrap: wrap;
   margin-top: 10px;
-  // height: 100px;
   text-align: center;
-  // line-height: 100px;
+}
+
+.image-preview {
+  width: 50px;
+  height: 50px;
+  &__wrapper {
+    height: 100px;
+    background-color: #F0F0F0;
+  }
+}
+
+img.preview {
+  width: 100px;
+  height: 100px;
 }
 
 .input {

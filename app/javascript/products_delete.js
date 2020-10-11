@@ -1,4 +1,5 @@
-//削除ボタンをクリックしたとき、処理が動く。
+// 画像の削除処理
+// 削除ボタンをクリックしたとき、処理が動く。
 $(document).on('click','.image-preview_btn_delete',function(){
   var append_input = $(`<li class="input"><label class="upload-label"><div class="upload-label__text">ファイルをアップロード<div class="input-area"><i class="fas fa fa-camera image-icon"><input class="hidden image_upload" type="file"></div></div></label></li>`)
   $ul = $('#previews')
