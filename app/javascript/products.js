@@ -15,7 +15,7 @@ $(function(){
     // $liに追加するためのプレビュー画面のHTML。横長でないとバグる
     var preview = $('<div class="image-preview__wapper"><img class="preview"></div><div class="image-preview_btn"><div class="image-preview_btn_delete">削除</div></div>'); 
     //次の画像を読み込むためのinput。 
-    var append_input = $(`<li class="input"><label class="upload-label"><div class="upload-label__text">ファイルをアップロード<div class="input-area"><input class="hidden image_upload" type="file"></div></div></label></li>`)
+    var append_input = $(`<li class="input"><label class="upload-label"><div class="upload-label__text">ファイルをアップロード<div class="input-area"><i class="fas fa fa-camera image-icon"></i><input class="hidden image_upload" type="file"></div></div></label></li>`)
 
   
 
@@ -49,7 +49,7 @@ $(function(){
       $li.addClass('image-preview'); // inputのクラスからプレビュー用のクラスに変更した
       $lis = $ul.find('.image-preview'); // クラス変更が完了したところで、プレビューの数を数える。 
       $('#previews li').css({
-        'width': `114px`
+        'width': `120px`
       })
 
       //"ul"に新しい"li(inputボタン)"を追加させる。

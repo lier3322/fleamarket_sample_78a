@@ -12,7 +12,7 @@
             .product__label__required
               必須
             .product__label__text
-              ※最大10枚までアップロードできます
+              ※最大5枚までアップロードできます
             -#       = form_with model: @product, class: "form", id: "product-form" do |f|
           .form-image
             -# .form-image__title
@@ -20,7 +20,7 @@
             -#   %span 必須
             -#   .form-image__text 最大5枚までアップロードできます
             = f.fields_for :images do |image|
-              .clearfix.image_file_box
+              .image_file_box
                 // 写真のプレビューとインプットボタンのul
                 %ul#previews
                   %li.input
@@ -30,8 +30,9 @@
                         -# ドラッグアンドドロップ
                         -# %br
                         ファイルをアップロード
-                        .input-area
-                          = image.file_field :image, class: "hidden image_upload"
+                      .input-area
+                        = icon('fas fa', 'camera', class:'image-icon')
+                        = image.file_field :image, class: "hidden image_upload"
         -# = f.fields_for :images do |image|
         -#   .image-box
         -#     %ul#previews

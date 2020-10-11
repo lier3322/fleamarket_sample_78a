@@ -333,15 +333,23 @@
   display: flex;
   // flex-wrap: wrap;
   margin-top: 10px;
-  height: 150px;
+  // height: 100px;
   text-align: center;
-  line-height: 150px;
+  // line-height: 100px;
 }
 
 .input {
   background-color: #F0F0F0;
   width: 650px;
   margin :0px 25px;
+  height: 100px;
+  border: dashed 1px grey;
+  padding-top: 10px;
+}
+
+.input-area {
+  height: 50px;
+  line-height: 50px;
 }
 
 .image-preview {
@@ -352,4 +360,13 @@
 
 .image-preview_btn_delete {
   height: 30px;
+  background-color: #ffb340;
+  width: 100px;
+  color: white;
+  line-height: 30px;
+  margin: 0px auto;
+}
+
+.hidden {
+  display: none;
 }
