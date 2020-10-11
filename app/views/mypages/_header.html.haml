@@ -1,0 +1,12 @@
+.header__box
+  .header__box__main
+    .main__icon
+      = link_to root_path do
+        = image_tag 'logo/logo.png', alt: 'title', height: '41', width: '140'
+
+  .header__box__action
+    .creditcard
+      = link_to new_creditcard_path do
+        クレジットカード登録
+    .action__user     
+      = link_to 'ログアウト', mypages_path

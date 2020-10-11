@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(version: 2020_09_27_073935) do
     t.string "first_name_kana", null: false
   end
 
+  create_table "creditcards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "customer_id"
+    t.string "card_id", null: false
+    t.string "exp_year", null: false
+    t.string "exp_month", null: false
+    t.text "cvc", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "image", null: false
     t.integer "product_id", null: false
