@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :set_product, only: [:show, :destroy]
+
   def index
     @products = Product.includes(:images).order('created_at DESC')
   end
@@ -25,6 +27,7 @@ class ProductsController < ApplicationController
     end
   end
 
+
   def get_category_children
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
   end
@@ -33,7 +36,29 @@ class ProductsController < ApplicationController
     @category_grandchildren = Category.find_by(name: "#{params[:parent_name]}").children
   end
 
+  def show
+    @images = Image.where(product_id:@product.id)
+  end
+
+  def destroy
+    @product.destroy
+  end
+
+  # エラーページ用
+  def not_found
+
+  end
+
   private
+
+  def set_product
+    # レコードの存在を確認し、なければnot_foundを返す
+    if Product.exists?(params[:id])
+      @product = Product.find(params[:id])
+    else
+      redirect_to not_found_path
+    end  
+  end
 
   def product_params
     params.require(:product).permit(:product_name, :product_detail, :category, :brand, :delivery_area, :price, :size_id, :product_status_id, :delivery_fee_id, :delivery_time_id, :trading_status,images_attributes: [:image]).merge(user_id: current_user.id)

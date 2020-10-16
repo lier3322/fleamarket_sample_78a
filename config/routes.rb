@@ -22,6 +22,12 @@ Rails.application.routes.draw do
     end
   end
 
+
+  resources :products
   resources :addresses , only: [:new, :create ]
+
+  # 削除済商品へのアクセスした場合のエラー画面を表示するためのルーティング
+  get 'not_found', to:'products#not_found'
+  
   end
 
