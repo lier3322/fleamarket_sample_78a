@@ -37,11 +37,13 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @images = Image.where(product_id:@product.id)
   end
 
   def destroy
-    @product.destroy
+    if @product.destroy
+    else
+      flash.now[:alert] = '削除に失敗しました'
+    end
   end
 
   # エラーページ用
