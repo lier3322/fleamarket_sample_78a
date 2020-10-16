@@ -40,10 +40,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    if @product.destroy
-    else
-      flash.now[:alert] = '削除に失敗しました'
-    end
+    flash.now[:alert] = '削除に失敗しました' unless @product.destroy  
   end
 
   # エラーページ用
