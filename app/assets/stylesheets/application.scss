@@ -34,3 +34,9 @@
 // 商品詳細ページ
 @import "modules/product_detail";
 @import "modules/products_show";
+
+// 商品削除ページ
+@import "modules/products/products_delete";
+
+// 商品エラーページ
+@import "modules/products/not_found";
