@@ -80,3 +80,5 @@ gem 'mini_magick'
 gem 'active_hash'
 
 gem 'fog-aws'
+
+gem 'ancestry'

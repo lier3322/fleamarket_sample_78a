@@ -8,6 +8,10 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
+    @category_parent_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
     unless user_signed_in?
       redirect_to new_user_session_path
     end
@@ -30,8 +34,14 @@ class ProductsController < ApplicationController
     flash.now[:alert] = '削除に失敗しました' unless @product.destroy  
   end
 
-  # エラーページ用
-  def not_found
+
+  
+  def get_category_children
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
+  def get_category_grandchildren
+    @category_grandchildren = Category.find_by(name: "#{params[:parent_name]}").children
   end
 
   private

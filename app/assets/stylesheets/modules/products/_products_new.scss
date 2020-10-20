@@ -109,6 +109,13 @@
               @include product_select;
             }
           }
+          &__selectarea__listen__added{
+            select{
+              margin-top: 16px;
+              margin-bottom: 14px;
+              @include product_select;
+            }
+          }
         }
       }
     }
