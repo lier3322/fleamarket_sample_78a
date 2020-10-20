@@ -24,6 +24,16 @@ Rails.application.routes.draw do
 
 
   resources :products
+
+  resources :products, except: :show 
+  
+  resources :products do
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
+  end
+
   resources :addresses , only: [:new, :create ]
 
   # 削除済商品へのアクセスした場合のエラー画面を表示するためのルーティング
