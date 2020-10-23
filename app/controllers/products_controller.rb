@@ -37,7 +37,7 @@ class ProductsController < ApplicationController
   # 購入確認ページへ遷移
   def purchase_check
   end
-  
+
   # 購入完了ページに遷移
   def purchase_completed
   end
@@ -53,9 +53,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-
-    params.permit(:product_name, :product_detail, :category, :brand, :delivery_area, :price, :size_id, :product_status_id, :delivery_fee_id, :delivery_time_id, :trading_status,images_attributes: [:image]).merge(user_id: current_user.id)
-    #下記は元々の記述
-    # params.require(:product).permit(:product_name, :product_detail, :category, :brand, :delivery_area, :price, :size_id, :product_status_id, :delivery_fee_id, :delivery_time_id, :trading_status,images_attributes: [:image]).merge(user_id: current_user.id)
+    params.require(:product).permit(:product_name, :product_detail, :category, :brand, :delivery_area, :price, :size_id, :product_status_id, :delivery_fee_id, :delivery_time_id, :trading_status,images_attributes: [:image]).merge(user_id: current_user.id)
   end
 end
