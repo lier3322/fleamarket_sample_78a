@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :creditcards, only: [:new, :create, :edit, :update, :index, :show]
 
 
+
   resources :products, except: :show 
   
   resources :products do
@@ -33,13 +34,18 @@ Rails.application.routes.draw do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
+      get 'purchase_completed'
     end
   end
+
 
   resources :addresses , only: [:new, :create ]
 
   # 削除済商品へのアクセスした場合のエラー画面を表示するためのルーティング
   get 'not_found', to:'products#not_found'
   
+  # 購入確認ページを表示するためのルーティング
+  get 'purchase_check', to:'products#purchase_check'
+
   end
 

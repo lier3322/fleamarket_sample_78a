@@ -17,13 +17,13 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
-    if @product.save
-      redirect_to root_path
-    else
-      @product.images.new
-      render :new
-    end
+     @product = Product.new(product_params)
+     if @product.save
+       redirect_to root_path
+     else
+       @product.images.new
+       render :new
+     end
   end
 
 
@@ -53,12 +53,19 @@ class ProductsController < ApplicationController
   def not_found
   end
 
-  
 
   def destroy
     flash.now[:alert] = '削除に失敗しました' unless @product.destroy  
   end
 
+
+  # 購入確認ページへ遷移
+  def purchase_check
+  end
+  
+  # 購入完了ページに遷移
+  def purchase_completed
+  end
 
   private
 
@@ -72,6 +79,9 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:product_name, :product_detail, :category, :brand, :delivery_area, :price, :size_id, :product_status_id, :delivery_fee_id, :delivery_time_id, :trading_status,images_attributes: [:image]).merge(user_id: current_user.id)
+
+    params.permit(:product_name, :product_detail, :category, :brand, :delivery_area, :price, :size_id, :product_status_id, :delivery_fee_id, :delivery_time_id, :trading_status,images_attributes: [:image]).merge(user_id: current_user.id)
+    #下記は元々の記述
+    # params.require(:product).permit(:product_name, :product_detail, :category, :brand, :delivery_area, :price, :size_id, :product_status_id, :delivery_fee_id, :delivery_time_id, :trading_status,images_attributes: [:image]).merge(user_id: current_user.id)
   end
 end
