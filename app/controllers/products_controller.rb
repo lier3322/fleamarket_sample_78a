@@ -14,13 +14,13 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
-    if @product.save
-      redirect_to root_path
-    else
-      @product.images.new
-      render :new
-    end
+     @product = Product.new(product_params)
+     if @product.save
+       redirect_to root_path
+     else
+       @product.images.new
+       render :new
+     end
   end
 
   def show
@@ -34,6 +34,13 @@ class ProductsController < ApplicationController
   def not_found
   end
 
+  # 購入確認ページへ遷移
+  def purchase_check
+  end
+
+  # 購入完了ページに遷移
+  def purchase_completed
+  end
   private
 
   def set_product
