@@ -349,6 +349,18 @@
           text-decoration: none;
         }
       }
+      &__edit{
+        width: 100%;
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
+        background-color: #3CCACE;
+        margin-top: 10px;
+        &--btn{
+          color: white;
+          text-decoration: none;
+        }
+      }
     }
   }
 }
