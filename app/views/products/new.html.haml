@@ -52,7 +52,7 @@
                 必須
             .category__styleSelect
               .category__styleSelect__selectarea
-                = f.select :category, @category_parent_array, {}, {class: 'category__styleSelect__select', id: 'parent_category', name:''}
+                = f.collection_select :category, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}
               .category__styleSelect__selectarea__listen
               .category__styleSelect__selectarea__two
         .product__brand__box
