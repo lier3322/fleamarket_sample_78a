@@ -11,7 +11,6 @@
 @import "modules/display_btn";
 @import "modules/app_banner";
 @import "modules/footer";
-@import "modules/product_detail";
 @import "modules/products_show";
 
 // ユーザー関連
@@ -31,8 +30,11 @@
 @import "modules/products/products_new";
 @import "error_messages";
 
+//商品購入確認ページ
+@import "modules/purchase_check";
+//商品購入ページ
+@import "modules/purchase_completed";
 // 商品詳細ページ
-@import "modules/product_detail";
 @import "modules/products_show";
 
 // 商品削除ページ
@@ -40,3 +42,6 @@
 
 // 商品エラーページ
 @import "modules/products/not_found";
+
+// 商品編集ページ
+@import "modules/products/products_edit";
