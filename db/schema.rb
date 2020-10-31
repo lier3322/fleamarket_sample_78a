@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_25_001753) do
+ActiveRecord::Schema.define(version: 2020_10_20_233713) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postnumber", null: false
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 2020_09_25_001753) do
     t.string "first_name", null: false
     t.string "last_name_kana", null: false
     t.string "first_name_kana", null: false
+  end
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "ancestry"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+    t.index ["name"], name: "index_categories_on_name"
   end
 
   create_table "creditcards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -46,20 +55,31 @@ ActiveRecord::Schema.define(version: 2020_09_25_001753) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "product_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "category_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_product_categories_on_category_id"
+    t.index ["product_id"], name: "index_product_categories_on_product_id"
+  end
+
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "product_name", null: false
     t.string "brand"
     t.string "delivery_area"
     t.integer "price", null: false
-    t.integer "size", null: false
-    t.integer "product_status", null: false
-    t.integer "delivery_fee", null: false
-    t.integer "delivery_time", null: false
+    t.integer "size_id", null: false
+    t.integer "product_status_id", null: false
+    t.integer "delivery_fee_id", null: false
+    t.integer "delivery_time_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "category"
     t.integer "trading_status", default: 1, null: false
+    t.text "product_detail", null: false
+    t.integer "category_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -80,4 +100,6 @@ ActiveRecord::Schema.define(version: 2020_09_25_001753) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "product_categories", "categories"
+  add_foreign_key "product_categories", "products"
 end

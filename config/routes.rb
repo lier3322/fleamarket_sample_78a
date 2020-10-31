@@ -11,9 +11,17 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index]
   resources :mypages, only: [:show, :index]
-  resources :creditcards, only: [:new, :create, :edit, :update]
+  resources :creditcards, only: [:new, :create, :edit, :update, :index, :show]
 
-  resources :products, except: :show  
+  resources :products, except: :show 
+  
+  resources :products do
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
+  end
+
   resources :addresses , only: [:new, :create ]
   end
 

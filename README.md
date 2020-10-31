@@ -52,6 +52,7 @@
   |Column|Type|Options|
   |------|----|-------|
   |product_name|text|null: false|
+  |product_detail|text|null:false|
   |price|integer|null: false|
   |brand|string||
   |size|integer|null: false|
@@ -87,7 +88,7 @@
   |Column|Type|Options|
   |------|----|-------|
   |category_name|string|null: false|
-  |ancestry|string|null: false|
+  |ancestry|string||
 
   Associations
   has_many :products
