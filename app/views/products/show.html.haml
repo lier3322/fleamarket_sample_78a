@@ -85,14 +85,11 @@
             %th.right-table
               %ul
                 %li
-                  =link_to "#", class: "table-category" do
-                    レディース
+                  = @product_s.category.name
                 %li
-                  =link_to "#", class: "table-category" do
-                    トップス
+                  = @product_s.category.parent.name
                 %li
-                  =link_to "#", class: "table-category" do
-                    Tシャツ/カットソー(半袖なし)
+                  = @product_s.category.root.name
           %tr.table
             %th.left-table ブランド
             %th.right-table

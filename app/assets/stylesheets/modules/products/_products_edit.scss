@@ -86,7 +86,8 @@
       }
     }
     .product__category__box{
-      @include product_box(100px);
+      padding:30px;
+      width:720px;
       margin-top: 130px;
       .product__details{
         @include product_name;
@@ -113,8 +114,9 @@
       }
     }
     .product__brand__box{
-      @include product_box(100px);
-      margin-top: 50px;
+      padding:30px;
+      width:720px;
+      height: 100px;
       .product__brandField{
         @include product_fieldBox;
         &__name{
