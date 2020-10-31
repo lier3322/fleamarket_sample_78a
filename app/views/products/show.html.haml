@@ -84,12 +84,12 @@
             %th.left-table カテゴリー
             %th.right-table
               %ul
-                %li
-                  = @product_s.category.name
-                %li
-                  = @product_s.category.parent.name
-                %li
+                %li.up
                   = @product_s.category.root.name
+                %li.middle
+                  = @product_s.category.parent.name
+                %li.down
+                  = @product_s.category.name
           %tr.table
             %th.left-table ブランド
             %th.right-table
