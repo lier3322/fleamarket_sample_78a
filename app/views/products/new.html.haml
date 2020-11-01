@@ -52,7 +52,9 @@
                 必須
             .category__styleSelect
               .category__styleSelect__selectarea
-                = f.select :category, [["カテゴリー（仮）", 0], ["レディース", 1], ["メンズ", 2], ["ベビー・キッズ", 3], ["インテリア・住まい・子供", 4]]
+                = f.collection_select :category, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}
+              .category__styleSelect__selectarea__listen
+              .category__styleSelect__selectarea__two
         .product__brand__box
           .product__brandField
             .product__brandField__name      
