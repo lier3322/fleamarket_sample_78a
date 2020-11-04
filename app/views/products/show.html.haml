@@ -72,9 +72,7 @@
             (税込)送料込み
       .detail
         = @product_s.product_detail
-      - if @product.user == current_user
-        .empty
-      - unless user_signed_in?
+      - if @product.user == current_user || !user_signed_in?
       - else
         .contents__sellBtn
           = link_to purchase_check_path, class: "purchaseBtn", method: :get do
