@@ -43,7 +43,6 @@ class ProductsController < ApplicationController
 
   def show
     @product_s = Product.find(params[:id])
-    @image = Image.find(params[:id]) 
   end
 
   def destroy
