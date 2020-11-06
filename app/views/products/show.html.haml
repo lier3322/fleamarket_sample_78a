@@ -35,81 +35,128 @@
       = icon("fa", "angle-right")
     %li.link
       =link_to "#", class: "link__text" do
-        レディース
+        = @product_s.category.root.name
     %li.link
       = icon("fa", "angle-right")
     %li.link
       =link_to "#", class: "link__text" do
-        トップス
+        = @product_s.category.parent.name
     %li.link
       = icon("fa", "angle-right")
     %li.link
       =link_to "#", class: "link__text" do
-        Tシャツ/カットソー(半袖/袖なし)
+        = @product_s.category.name
     %li.link
       = icon("fa", "angle-right")
     %li.link
       =link_to "#", class: "link__text" do
-        テスト
+        = @product_s.product_name
   
 .main-contents
   .main__show
     .contents
       .contents__text
         %h2.image-name
-          テスト
+          = @product_s.product_name
       .contents__image
-        = image_tag 'pict/beef.jpg', class: "beef-image"
+        = image_tag @image.image.url, class: "beef-image"
         .contents__image__small
-          = image_tag 'pict/beef.jpg', class: "beef-image-small"
+          - @product_s.images.each do |image|
+            = image_tag image.image.url
         .contents__price
           %span.price
-            ¥10000
+            ¥
+            = @product_s.price
         .contents__tax
           %span.tax
             (税込)送料込み
-      .contents__sellBtn
-        = link_to purchase_check_path, class: "purchaseBtn", method: :get do
-          .link__sellBtn__text
-            購入画面に進む
-      .contents__detail
-        .detail-text
-          テストテストテストテストテストテスト
+      .detail
+        = @product_s.product_detail
+      - if @product.user == current_user || !user_signed_in?
+      - else
+        .contents__sellBtn
+          = link_to purchase_check_path, class: "purchaseBtn", method: :get do
+            .link__sellBtn__text
+              購入画面に進む
       .contents__table
         %table.main-table
           %tr.table
             %th.left-table 出品者
-            %th.right-table あああ
+            %th.right-table 
+              = @product_s.user.nickname
           %tr.table
             %th.left-table カテゴリー
             %th.right-table
               %ul
-                %li.up
+                %li
                   = @product_s.category.root.name
-                %li.middle
+                %li
                   = @product_s.category.parent.name
-                %li.down
+                %li
                   = @product_s.category.name
           %tr.table
             %th.left-table ブランド
             %th.right-table
+              = @product_s.brand
           %tr.table
             %th.left-table 商品のサイズ
             %th.right-table
+              -if @product_s.delivery_time.id == 1 
+                XXS以下
+              -if @product_s.delivery_time.id == 2
+                XS(SS)          
+              -if @product_s.delivery_time.id == 3
+                S
+              -if @product_s.delivery_time.id == 4
+                M
+              -if @product_s.delivery_time.id == 5
+                L            
+              -if @product_s.delivery_time.id == 6
+                XL(LL)
+              -if @product_s.delivery_time.id == 7 
+                2XL(3L)
+              -if @product_s.delivery_time.id == 8
+                3XL(4L)           
+              -if @product_s.delivery_time.id == 9
+                4XL(5L)
+              -if @product_s.delivery_time.id == 10
+                FREE SIZE
           %tr.table
             %th.left-table 商品の状態
-            %th.right-table 新品/未使用
+            %th.right-table 
+              -if @product_s.product_status.id == 1 
+                新品、未使用
+              -if @product_s.product_status.id == 2
+                未使用に近い
+              -if @product_s.product_status.id == 3
+                目立った傷や汚れなし
+              -if @product_s.product_status.id == 4
+                やや傷や汚れあり
+              -if @product_s.product_status.id == 5
+                傷や汚れあり
+              -if @product_s.product_status.id == 6
+                全体的に状態が悪い
           %tr.table
             %th.left-table 配送料の負担
-            %th.right-table 送料込み(出品者負担)
+            %th.right-table 
+              -if @product_s.delivery_fee.id == 1 
+                送料込み (出品者負担)
+              -if @product_s.delivery_fee.id == 2
+                着払い (購入者負担)
           %tr.table
             %th.left-table 発送元の地域
             %th.right-table
               =link_to "#", class: "table-category" do
-                北海道
+                = @product_s.delivery_area
           %tr.table
             %th.left-table 発送日の目安
-            %th.right-table 1-2日で発送
+            %th.right-table
+              -if @product_s.delivery_fee.id == 1 
+                1~2日で発送
+              -if @product_s.delivery_fee.id == 2
+                2~3日で発送            
+              -if @product_s.delivery_fee.id == 3
+                4~7日で発送
       .contents__option
         %ul.options
           %li.favorite
@@ -136,10 +183,10 @@
                   1
                 %p.tax-include
                   (税込)
-      - if @product.user_id == current_user.id
+      - if @product.user == current_user
         .contents__delete
           = link_to 'この商品を削除する', product_path(@product), method: :delete, data: { confirm: 'この商品を削除してよろしいですか' }, class:"contents__delete--btn"
-      -if @product.user_id == current_user.id
+      -if @product.user == current_user
         .contents__edit
           = link_to "この商品を編集する", edit_product_path(@product.id), class: 'contents__edit--btn'
 = render "items/app_banner"
