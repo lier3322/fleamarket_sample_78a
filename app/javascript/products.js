@@ -81,3 +81,6 @@ $(window).on('load', function () {
     image_files[i].remove();
   }
 });
+
+
+

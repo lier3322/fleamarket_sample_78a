@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :mypages, only: [:show, :index]
   resources :creditcards
 
+  
   resources :products do
     collection do
       get 'done', to: 'products#done'
@@ -22,17 +23,15 @@ Rails.application.routes.draw do
     member do
       get 'purchase_check', to:'products#purchase_check'
       post 'purchase_completed', to:'products#purchase_completed'
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+      get 'products/:id' => 'products#show'
+      get 'purchase_completed'
+
     end
   end
-  resources :addresses , only: [:new, :create ]
 
-  # resources :purchase, only: [:index] do
-  #   collection do
-  #     get 'index', to: 'purchase#index'
-  #     post 'pay', to: 'purchase#pay'
-  #     get 'done', to: 'purchase#done'
-  #   end
-  # end
+  resources :addresses , only: [:new, :create ]
 
   # 削除済商品へのアクセスした場合のエラー画面を表示するためのルーティング
   get 'not_found', to:'products#not_found'

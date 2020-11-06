@@ -11,6 +11,8 @@ require('jquery')
 require('../products')
 require('../products_delete')
 require('../payjp')
+require('../products_category')
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

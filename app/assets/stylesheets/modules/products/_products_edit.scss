@@ -92,6 +92,7 @@
       .product__details{
         @include product_name;
         color: rgb(204, 204, 204);
+        margin-bottom: 24px;
         .product__categoryField{
           @include product_fieldBox;
           &__name{
@@ -109,17 +110,13 @@
               @include product_select;
             }
           }
-          &__selectarea__listen__added{
-            select{
-              margin-top: 16px;
-              @include product_select;
-            }
-          }
         }
       }
     }
     .product__brand__box{
-      @include product_box(100px);
+      padding:30px;
+      width:720px;
+      height: 100px;
       .product__brandField{
         @include product_fieldBox;
         &__name{

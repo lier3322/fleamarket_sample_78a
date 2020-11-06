@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   require 'payjp'
-  before_action :set_product, only: [:show, :destroy, :purchase_check, :purchase_completed]
+  before_action :set_product, only: [:show, :destroy, :edit, :update, :purchase_check, :purchase_completed]
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -9,8 +9,26 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
+
+    @category_parent_array = ["---"]
+    @category_parent_array = Category.where(ancestry: nil)
     unless user_signed_in?
       redirect_to new_user_session_path
+    end
+  end
+
+  def edit
+    @product.images.new
+
+    @category_parent_array = ["---"]
+    @category_parent_array = Category.where(ancestry: nil)
+  end
+
+  def update
+    if @product.update(product_params)
+      redirect_to product_path(@product.id)
+    else
+      redirect_to action: :edit
     end
   end
 
@@ -25,14 +43,20 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product_s = Product.find(params[:id])
+    @image = Image.find(params[:id]) 
   end
 
   def destroy
     flash.now[:alert] = '削除に失敗しました' unless @product.destroy  
   end
 
-  # エラーページ用
-  def not_found
+  def get_category_children
+    @category_children = Category.find("#{params[:parent_id]}").children
+  end
+
+  def get_category_grandchildren
+    @category_grandchildren = Category.find(params[:child_id]).children
   end
 
   # 購入確認ページへ遷移
@@ -76,6 +100,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:product_name, :product_detail, :category, :brand, :delivery_area, :price, :size_id, :product_status_id, :delivery_fee_id, :delivery_time_id, :trading_status,images_attributes: [:image]).merge(user_id: current_user.id)
+    params.require(:product).permit(:product_name, :product_detail, :category_id, :brand, :delivery_area, :price, :size_id, :product_status_id, :delivery_fee_id, :delivery_time_id, :trading_status,images_attributes: [:image, :id, :_destory]).merge(user_id: current_user.id)
   end
 end
