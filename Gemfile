@@ -80,3 +80,6 @@ gem 'mini_magick'
 gem 'active_hash'
 
 gem 'fog-aws'
+gem 'payjp'
+gem 'jquery-rails'
+gem 'turbolinks', '~> 5'

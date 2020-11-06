@@ -66,17 +66,10 @@
     &__buy {
       background-color: #ea352d;
       margin: 30px 100px;
-      .buyBtn {
-        text-decoration: none;
-        height: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .contents__detail__buy__confirm {
-          color: white;
-          height: 60px;
-          padding-top: 16px;
-        }
+      display: flex;
+      justify-content: center;
+     .contents__detail__buy__confirm {
+       font-size: 20px;
       }
     }
   }

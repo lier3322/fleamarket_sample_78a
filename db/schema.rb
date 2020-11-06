@@ -32,9 +32,9 @@ ActiveRecord::Schema.define(version: 2020_09_27_073935) do
     t.integer "user_id", null: false
     t.string "customer_id"
     t.string "card_id", null: false
-    t.string "exp_year", null: false
-    t.string "exp_month", null: false
-    t.text "cvc", null: false
+    t.string "exp_year", default: "", null: false
+    t.string "exp_month", default: "", null: false
+    t.string "cvc", default: "", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

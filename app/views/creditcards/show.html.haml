@@ -1,2 +1,21 @@
-= render 'title'
-= render 'update'
+.card__add
+  .card__header
+    .title クレジットカード情報確認
+  .card__info
+    .card__info__number
+      = "**** **** **** " + @default_card_information.last4
+    .card__info__exp
+      - exp_month = @default_card_information.exp_month.to_s
+      - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+      = exp_month + " / " + exp_year
+  .card-delete
+    = form_tag(creditcard_path, method: :delete, id: 'charge-form', name: "inputForm") do
+      %input{ type: "hidden", name: "card_id", value: "" }
+      %button.delete-btn 削除する
+  .top-page-btn
+    = link_to root_path , class: "topPageBtn" do
+      .top-page-btn-text
+        トップページに戻る
+        
+= render 'items/app_banner'
+= render 'items/footer'

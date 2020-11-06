@@ -69,7 +69,7 @@
           %span.tax
             (税込)送料込み
       .contents__sellBtn
-        = link_to purchase_check_path, class: "purchaseBtn", method: :get do
+        = link_to purchase_check_product_path(@product), class: "purchaseBtn", method: :get do
           .link__sellBtn__text
             購入画面に進む
       .contents__detail
