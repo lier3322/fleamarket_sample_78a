@@ -65,7 +65,7 @@ class ProductsController < ApplicationController
     if creditcard.blank?
       redirect_to controller: "creditcards", action: "new"
     else
-      Payjp.api_key = "sk_test_355455f8b6eacc16bf5f51c9"
+      Payjp.api_key = ENV['PAYJP_ACCESS_KEY']
       customer = Payjp::Customer.retrieve(creditcard.customer_id)
       @default_card_information = customer.cards.retrieve(creditcard.card_id)
     end
@@ -74,7 +74,7 @@ class ProductsController < ApplicationController
   # 購入完了ページに遷移
   def purchase_completed
     creditcard = Creditcard.where(user_id: current_user.id).last
-    Payjp.api_key = "sk_test_355455f8b6eacc16bf5f51c9"
+    Payjp.api_key = ENV['PAYJP_ACCESS_KEY']
     Payjp::Charge.create(
     :amount => 13500, #支払金額を入力(現状固定)
     :customer => creditcard.customer_id, #顧客ID
