@@ -59,7 +59,7 @@
         %h2.image-name
           = @product_s.product_name
       .contents__image
-        = image_tag @image.image.url, class: "beef-image"
+        = image_tag @product_s.images.first.image.url, class: "beef-image"
         .contents__image__small
           - @product_s.images.each do |image|
             = image_tag image.image.url
