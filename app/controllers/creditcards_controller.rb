@@ -12,7 +12,6 @@ class CreditcardsController < ApplicationController
   end
 
   def create
-    # api秘密鍵を呼び出す Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
     Payjp.api_key = "sk_test_355455f8b6eacc16bf5f51c9"
     if params["payjp_token"].blank?
       redirect_to action: "new", alert: "クレジットカードを登録できませんでした"
@@ -38,16 +37,6 @@ class CreditcardsController < ApplicationController
       creditcard.delete
     end
       redirect_to root_path
-    # creditcard = Creditcard.where(user_id: current_user.id).first
-    # if creditcard.blank?
-    #   redirect_to action: "new"
-    # else
-    #   Payjp.api_key = "sk_test_355455f8b6eacc16bf5f51c9"
-    #   customer = Payjp::Customer.retrieve(creditcard.customer_id)
-    #   customer.delete
-    #   creditcard.delete
-    # end
-    #   redirect_to root_path
   end
 
   def show #cardのデータpayjpに送り情報を取り出す
@@ -57,15 +46,6 @@ class CreditcardsController < ApplicationController
       customer = Payjp::Customer.retrieve(creditcard.customer_id)
       @default_card_information = customer.cards.retrieve(creditcard.card_id)
     end
-    # creditcard = Creditcard.where(user_id: current_user.id).first
-    # if creditcard.blank?
-    #   redirect_to action: "new"
-    # else
-    #   Payjp.api_key = "sk_test_355455f8b6eacc16bf5f51c9"
-    #   #PAYJPに登録されている顧客情報をとってくる
-    #   customer = Payjp::Customer.retrieve(creditcard.customer_id)
-    #   @default_card_information = customer.cards.retrieve(creditcard.card_id)
-    # end
   end
 
   def edit

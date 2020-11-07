@@ -76,7 +76,7 @@ class ProductsController < ApplicationController
     creditcard = Creditcard.where(user_id: current_user.id).last
     Payjp.api_key = "sk_test_355455f8b6eacc16bf5f51c9"
     Payjp::Charge.create(
-    :amount => 13500, #支払金額を入力（itemテーブル等に紐づけても良い）
+    :amount => 13500, #支払金額を入力(現状固定)
     :customer => creditcard.customer_id, #顧客ID
     :currency => 'jpy', #日本円
     )
