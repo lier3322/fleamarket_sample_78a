@@ -1,0 +1,47 @@
+.card__add {
+  .card__header {
+    padding: 15px 60px;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+    margin-bottom: 3px;
+    .title {
+      font-size: 20px;
+      text-align: center;
+    }
+  }
+  .card__info {
+    display: flex;
+    justify-content: center;
+    padding: 50px 30px;
+    margin: 0px 150px;
+    background-color: #3ccace;
+    &__number {
+      font-size: 22px;
+    }
+    &__exp {
+      font-size: 20px;
+      margin-left: 20px;
+    }
+  }
+  .card-delete {
+    display: flex;
+    justify-content: center;
+    background-color: #3ccace;
+    margin: 0px 150px;
+    padding-bottom: 50px;
+    .delete-btn {
+      height: 40px;
+      width: 120px;
+    }
+  }
+  .top-page-btn {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0px;
+    .topPageBtn {
+      font-size: 20px;
+      .top-page-btn-text {
+        font-size: 20px;
+      }
+    }
+  }
+}

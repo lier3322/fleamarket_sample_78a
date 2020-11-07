@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'purchase/index'
+  get 'purchase/done'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -11,15 +13,21 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index]
   resources :mypages, only: [:show, :index]
-  resources :creditcards, only: [:new, :create, :edit, :update, :index, :show]
+  resources :creditcards
 
   
   resources :products do
     collection do
+      get 'done', to: 'products#done'
+    end
+    member do
+      get 'purchase_check', to:'products#purchase_check'
+      post 'purchase_completed', to:'products#purchase_completed'
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'products/:id' => 'products#show'
       get 'purchase_completed'
+
     end
   end
 
@@ -27,9 +35,9 @@ Rails.application.routes.draw do
 
   # 削除済商品へのアクセスした場合のエラー画面を表示するためのルーティング
   get 'not_found', to:'products#not_found'
-  
-  # 購入確認ページを表示するためのルーティング
-  get 'purchase_check', to:'products#purchase_check'
+
+  # クレジットカード登録ページのルーティング
+  get 'card', to:'mypages#card'
 
   end
 

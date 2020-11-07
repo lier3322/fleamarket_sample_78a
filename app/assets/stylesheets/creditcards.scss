@@ -1,36 +1,80 @@
-.header {
-  display: flex;
-  .title {
-    margin: 0 auto;
-  }
-}
-.form{
-  margin-top: 50px;
-  &__upper{
-    margin: 0 auto;
-    max-width: 343px;
-    p {
+.card__add {
+  .card__header {
+    padding: 15px 60px;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+    margin-bottom: 3px;
+    .title {
+      font-size: 20px;
       text-align: center;
     }
-    &__group {
-      font-size: 14px;
-      color: #333;
-      &:not( :first-child ){
-        margin-top: 32px;
+  }
+  .details{
+    margin-top: 50px;
+    .number-details {
+      margin: 30px auto;
+      max-width: 343px;
+      display: flex;
+
+      .card-number {
+        font-size: 16px;
       }
-      label{
-        font-weight: 600;
+      .must_check {
+          background-color: #3CCACE;
+          color: #fff;
+          font-size: 12px;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          vertical-align:top;
       }
-      .form-require {
-        background-color: #3CCACE;
-        color: #fff;
-        font-size: 12px;
-        margin: 0 0 0 8px;
-        padding: 2px 4px;
-        border-radius: 2px;
-        vertical-align:top;
-        &-optional {
-          background-color: gray;
+    }
+    .number {
+      display: flex;
+      justify-content: center;
+      .cardnumber {
+        height: 50px;
+        width: 300px;
+      }
+    }
+    .image {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0px;
+      .visa {
+        height: 40px;
+        width: 80px;
+      }
+      .master {
+        height: 40px;
+        width: 80px;
+      }
+      .jcb {
+        height: 40px;
+        width: 80px;
+      }
+      .amex {
+        height: 40px;
+        width: 80px;
+      }
+      .diners {
+        height: 40px;
+        width: 80px;
+      }
+      .discover {
+        height: 40px;
+        width: 80px;
+      }
+    }
+    .expirationdate {
+      &__details {
+        margin: 30px auto;
+        max-width: 343px;
+        display: flex;
+        .date {
+          font-size: 16px;
+        }
+        .must_check {
+          background-color: #3CCACE;
           color: #fff;
           font-size: 12px;
           margin: 0 0 0 8px;
@@ -39,33 +83,60 @@
           vertical-align:top;
         }
       }
-      .input-default{
-        width: 90%;
-        margin: 8px 0 0;
-        height: 48px;
-        padding: 10px 16px 8px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-        background: #fff;
-        line-height: 1.5;
-        font-size: 16px;
-        &.harf{
-          width: calc(40% - 6px);
-          margin: 8px 8px 0 0;
-          height: 45px;
-          border-radius: 4px;
-          border: 1px solid #ccc;
-          background: #fff;
-          line-height: 1.5;
-          font-size: 16px;
-          &.exp{
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
+      &__choice {
+        display: flex;
+        justify-content: center;
+        margin: 30px auto;
+        .month {
+          display: flex;
+          width: 120px;
+          .card-default {
+            width: 120px;
+          }
+        }
+        .year {
+          margin-left: 30px;
+          display: flex;
+          .card-default {
+            width: 120px;
           }
         }
       }
-      .btn-default {
+    }
+    .securitycode {
+      &__details {
+        margin: 30px auto;
+        max-width: 343px;
+        display: flex;
+        &__title {
+          font-size: 16px;
+        }
+        .must_check {
+          background-color: #3CCACE;
+          color: #fff;
+          font-size: 12px;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          vertical-align:top;
+        }
+      }
+      &__cardsecurity {
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        .securitycode__cardsecurity__form {
+          width: 300px;
+          height: 50px;
+        }
+      }
+      .card-question {
+        margin: 30px auto;
+      }
+    }
+    .add {
+      margin-bottom: 30px;
+      .add__btn {
         display: inherit;
         width: 200px;
         height: 50px;
@@ -75,15 +146,6 @@
         cursor: pointer;
         margin: 0 auto;
       }
-      select {
-        height: 42px;
-        width: 120px;
-      }
     }
   }
-}
-
-.edit {
-  margin-top: 40px;
-  text-align: center;
 }

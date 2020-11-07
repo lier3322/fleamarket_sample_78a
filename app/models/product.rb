@@ -12,7 +12,7 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :images, allow_destroy: true
   validates_associated :images
   validates :images, presence: { message:"は1つ以上登録してください" }
-  validates :product_name, length: { maximum: 40 }, presence: true 
+  validates :product_name, length: { maximum: 40 }, presence: true
   validates :product_detail, presence: true
   validates :category_id, :size_id, :product_status_id, :delivery_area, :delivery_fee_id, :delivery_time_id, presence: { message: "を選択してください"}
   

@@ -10,6 +10,8 @@ require("channels")
 require('jquery')
 require('../products')
 require('../products_delete')
+require('../payjp')
+require('../products_category')
 require('../products_category')
 
 
