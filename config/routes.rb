@@ -19,12 +19,12 @@ Rails.application.routes.draw do
   resources :products do
     collection do
       get 'done', to: 'products#done'
-      get 'get_category_children', defaults: { format: 'json' }
-      get 'get_category_grandchildren', defaults: { format: 'json' }
     end
     member do
       get 'purchase_check', to:'products#purchase_check'
       post 'purchase_completed', to:'products#purchase_completed'
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'products/:id' => 'products#show'
       get 'purchase_completed'
 
