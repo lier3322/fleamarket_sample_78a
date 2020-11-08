@@ -60,6 +60,7 @@ class ProductsController < ApplicationController
 
   # 購入確認ページへ遷移
   def purchase_check
+    @product_s = Product.find(params[:id])
     creditcard = Creditcard.where(user_id: current_user.id).last
     if creditcard.blank?
       redirect_to controller: "creditcards", action: "new"
@@ -72,19 +73,25 @@ class ProductsController < ApplicationController
 
   # 購入完了ページに遷移
   def purchase_completed
+    @product_s = Product.find(params[:id])
     creditcard = Creditcard.where(user_id: current_user.id).last
     Payjp.api_key = ENV['PAYJP_ACCESS_KEY']
     Payjp::Charge.create(
-    :amount => 13500, #支払金額を入力(現状固定)
+    :amount => @product_s.price,
     :customer => creditcard.customer_id, #顧客ID
     :currency => 'jpy', #日本円
     )
     @product.update(trading_status: 2)
-    redirect_to action: 'done'
+    redirect_to done_product_path(@product)
   
   end
 
   def done
+    @product_s = Product.find(params[:id])
+    creditcard = Creditcard.where(user_id: current_user.id).last
+    Payjp.api_key = ENV['PAYJP_ACCESS_KEY']
+    customer = Payjp::Customer.retrieve(creditcard.customer_id)
+    @default_card_information = customer.cards.retrieve(creditcard.card_id)
   end
   
   private

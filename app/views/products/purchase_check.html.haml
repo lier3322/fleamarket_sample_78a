@@ -9,10 +9,13 @@
         %b 購入内容の確認
     .contents__detail__pic
       .contents__detail__pic__confirm
-        = image_tag 'pict/beef.jpg', alt: 'beef', class: 'beef-pic'
+        = image_tag @product_s.images.first.image.url, class: 'beef-pic'
     .contents__detail__price
       .contents__detail__price__confirm
-        %b 支払い金額
+        %span.price
+          %b 支払い金額
+          ¥
+          = @product_s.price
     .contents__detail__method
       .contents__detail__method__confirm
         %b 支払い方法
