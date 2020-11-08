@@ -19,8 +19,8 @@
                 // 写真のプレビューとインプットボタンのul
                 %ul#previews
                   - @product.images.each do |image|
-                    %li.image-preview
-                      -if image.persisted?
+                    -if image.persisted?
+                      %li.image-preview
                         = image_tag image.image.url
                         .image-preview_btn
                           .image-preview_btn_delete
