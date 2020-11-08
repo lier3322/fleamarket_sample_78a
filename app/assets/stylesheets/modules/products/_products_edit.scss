@@ -323,8 +323,9 @@
 }
 
 .image-preview {
-  width: 50px;
+  width: 120px;
   height: 50px;
+  flex-shrink: 0;
   &__wrapper {
     height: 100px;
     background-color: #F0F0F0;
